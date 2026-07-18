@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!--__________ Julie Farkas __________-->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Followers_Julie_Farkas_Child</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <title>raised in the Fort</title>
+        <titleShort>Fort-raised</titleShort>
+        <baseDesc>[PAWN_nameDef] grew up inside a Followers chapter, learning to change bandages before she learned to read.</baseDesc>
+        <slot>Childhood</slot>
+        <spawnCategories>
+            <li>FCP_Character_Backstory_Farkas_Child</li>
+        </spawnCategories>
+        <skillGains>
+            <Social>3</Social>
+            <Intellectual>2</Intellectual>
+        </skillGains>
+    </BackstoryDef>
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Followers_Julie_Farkas_Adult</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <title>chapter administrator</title>
+        <titleShort>administrator</titleShort>
+        <baseDesc>[PAWN_nameDef] runs a struggling Followers chapter, stretching too little medicine across too many patients and keeping the peace with everyone who walks through the door.</baseDesc>
+        <slot>Adulthood</slot>
+        <spawnCategories>
+            <li>FCP_Backstory_Followers_Julie_Farkas</li>
+        </spawnCategories>
+        <skillGains>
+            <Social>8</Social>
+            <Medicine>4</Medicine>
+            <Intellectual>3</Intellectual>
+        </skillGains>
+    </BackstoryDef>
+
+    <!--__________ Arcade Gannon __________-->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Followers_Arcade_Gannon_Child</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <title>soldier's son</title>
+        <titleShort>soldier's son</titleShort>
+        <baseDesc>[PAWN_nameDef] was raised by a mother who never spoke of his father, a soldier from an army that no longer exists.</baseDesc>
+        <slot>Childhood</slot>
+        <spawnCategories>
+            <li>FCP_Character_Backstory_Gannon_Child</li>
+        </spawnCategories>
+        <skillGains>
+            <Intellectual>3</Intellectual>
+            <Medicine>2</Medicine>
+        </skillGains>
+    </BackstoryDef>
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Followers_Arcade_Gannon_Adult</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <title>Followers researcher</title>
+        <titleShort>researcher</titleShort>
+        <baseDesc>[PAWN_nameDef] studies the medicinal uses of what the wasteland grows, treating patients between experiments he never quite has enough supplies to finish.</baseDesc>
+        <slot>Adulthood</slot>
+        <spawnCategories>
+            <li>FCP_Backstory_Followers_Arcade_Gannon</li>
+        </spawnCategories>
+        <skillGains>
+            <Medicine>8</Medicine>
+            <Intellectual>6</Intellectual>
+        </skillGains>
+    </BackstoryDef>
+
+    <!--__________ Beatrix Russell __________-->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Followers_Beatrix_Russell_Child</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <title>Freeside orphan</title>
+        <titleShort>orphan</titleShort>
+        <baseDesc>[PAWN_nameDef] survived the streets before the Followers took her in, and never forgot what it cost her to get by.</baseDesc>
+        <slot>Childhood</slot>
+        <spawnCategories>
+            <li>FCP_Character_Backstory_Russell_Child</li>
+        </spawnCategories>
+        <skillGains>
+            <Melee>3</Melee>
+            <Shooting>2</Shooting>
+        </skillGains>
+    </BackstoryDef>
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Followers_Beatrix_Russell_Adult</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <title>Followers guard</title>
+        <titleShort>guard</titleShort>
+        <baseDesc>[PAWN_nameDef] stands watch over the chapter, the only member willing to carry a gun so the rest never have to.</baseDesc>
+        <slot>Adulthood</slot>
+        <spawnCategories>
+            <li>FCP_Backstory_Followers_Beatrix_Russell</li>
+        </spawnCategories>
+        <skillGains>
+            <Shooting>7</Shooting>
+            <Melee>5</Melee>
+        </skillGains>
+    </BackstoryDef>
+
+</Defs>

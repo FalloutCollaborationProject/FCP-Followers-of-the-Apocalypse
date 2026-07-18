@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--__________ Player Factions __________-->
+
+    <!-- Followers Player Faction -->
+
+    <FactionDef ParentName="PlayerFactionBase">
+        <defName>FCP_Faction_Followers_Player</defName>
+        <label>Followers Chapter</label>
+        <description>The Followers of the Apocalypse hold that knowledge and medicine belong to everyone, not just those who can pay for them. As a Followers chapter, you lead a community dedicated to healing the wasteland's wounded and preserving what the old world left behind, one patient at a time.</description>
+        <isPlayer>true</isPlayer>
+        <techLevel>Industrial</techLevel>
+        <basicMemberKind>Colonist</basicMemberKind>
+        <pawnSingular>Follower</pawnSingular>
+        <pawnsPlural>Followers</pawnsPlural>
+        <leaderTitle>Administrator</leaderTitle>
+        <factionIconPath>World_Icon/FCP_Followers_World_Icon</factionIconPath>
+        <factionNameMaker>FCP_NamerFaction_Followers_Player</factionNameMaker>
+        <settlementNameMaker>FCP_NamerSettlement_Followers</settlementNameMaker>
+        <colorSpectrum>
+            <li>(1, 1, 1)</li>
+        </colorSpectrum>
+        <allowedCultures>
+            <li>FCP_Culture_Followers</li>
+        </allowedCultures>
+        <backstoryFilters>
+            <li>
+                <categories>
+                    <li>FCP_Followers</li>
+                    <li>FCP_Followers_Child</li>
+                </categories>
+            </li>
+        </backstoryFilters>
+    </FactionDef>
+
+</Defs>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!--__________ Unique Character Base __________-->
+
+    <PawnKindDef Name="FCP_Followers_UniqueCharacterBase" ParentName="FCP_FollowerskindBase" Abstract="true">
+        <showInDebugSpawner>false</showInDebugSpawner>
+        <apparelMoney>9999</apparelMoney>
+        <gearHealthRange>10</gearHealthRange>
+        <apparelAllowHeadgearChance>1</apparelAllowHeadgearChance>
+        <apparelIgnoreSeasons>true</apparelIgnoreSeasons>
+        <weaponMoney>9999</weaponMoney>
+        <initialWillRange>4~8</initialWillRange>
+        <initialResistanceRange>12~20</initialResistanceRange>
+    </PawnKindDef>
+
+    <!-- Julie Farkas -->
+
+    <PawnKindDef ParentName="FCP_Followers_UniqueCharacterBase">
+        <defName>FCP_Unique_Pawnkind_Julie_Farkas</defName>
+        <label>Julie Farkas</label>
+        <factionLeader>true</factionLeader>
+        <combatPower>90</combatPower>
+        <apparelRequired>
+            <li>FCP_Apparel_Lab_Coat_Followers</li>
+        </apparelRequired>
+        <weaponTags>
+            <li>Gun</li>
+            <li MayRequire="Rick.FCP.BallisticWeapons">FCP_Pistol</li>
+        </weaponTags>
+        <requiredWorkTags>
+            <li>Social</li>
+        </requiredWorkTags>
+        <backstoryFiltersOverride>
+            <li>
+                <categoriesChildhood>
+                    <li>FCP_Character_Backstory_Farkas_Child</li>
+                </categoriesChildhood>
+                <categoriesAdulthood>
+                    <li>FCP_Backstory_Followers_Julie_Farkas</li>
+                </categoriesAdulthood>
+            </li>
+        </backstoryFiltersOverride>
+    </PawnKindDef>
+
+    <!-- Arcade Gannon -->
+
+    <PawnKindDef ParentName="FCP_Followers_UniqueCharacterBase">
+        <defName>FCP_Unique_Pawnkind_Arcade_Gannon</defName>
+        <label>Arcade Gannon</label>
+        <combatPower>85</combatPower>
+        <apparelRequired>
+            <li>FCP_Apparel_Lab_Coat_Followers</li>
+        </apparelRequired>
+        <weaponTags>
+            <li>Gun</li>
+            <li MayRequire="Rick.FCP.BallisticWeapons">FCP_Pistol</li>
+        </weaponTags>
+        <backstoryFiltersOverride>
+            <li>
+                <categoriesChildhood>
+                    <li>FCP_Character_Backstory_Gannon_Child</li>
+                </categoriesChildhood>
+                <categoriesAdulthood>
+                    <li>FCP_Backstory_Followers_Arcade_Gannon</li>
+                </categoriesAdulthood>
+            </li>
+        </backstoryFiltersOverride>
+    </PawnKindDef>
+
+    <!-- Beatrix Russell -->
+
+    <PawnKindDef ParentName="FCP_Followers_UniqueCharacterBase">
+        <defName>FCP_Unique_Pawnkind_Beatrix_Russell</defName>
+        <label>Beatrix Russell</label>
+        <combatPower>110</combatPower>
+        <weaponTags>
+            <li>Gun</li>
+            <li MayRequire="Rick.FCP.BallisticWeapons">FCP_Pistol</li>
+            <li MayRequire="Rick.FCP.BallisticWeapons">FCP_Shotgun</li>
+        </weaponTags>
+        <requiredWorkTags>
+            <li>Violent</li>
+        </requiredWorkTags>
+        <backstoryFiltersOverride>
+            <li>
+                <categoriesChildhood>
+                    <li>FCP_Character_Backstory_Russell_Child</li>
+                </categoriesChildhood>
+                <categoriesAdulthood>
+                    <li>FCP_Backstory_Followers_Beatrix_Russell</li>
+                </categoriesAdulthood>
+            </li>
+        </backstoryFiltersOverride>
+    </PawnKindDef>
+
+</Defs>

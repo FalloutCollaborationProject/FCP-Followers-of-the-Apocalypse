@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+
+    <!--__________ Followers of the Apocalypse Memes __________-->
+
+    <!-- Preserved Knowledge -->
+
+    <MemeDef>
+        <defName>FCP_Meme_Followers_Knowledge</defName>
+        <label>Preserved Knowledge</label>
+        <description>The Followers of the Apocalypse believe the old world's knowledge must be recovered, preserved, and freely shared, not hoarded by warlords or locked away by the fearful. Every book saved from the ruins, every technique passed on to a new student, is a wound the Great War inflicted on humanity beginning to close. Ignorance killed as many people after the bombs fell as the bombs themselves, and the Followers intend to see it never happens again.</description>
+        <iconPath>UI/Memes/OldWorldIdealism</iconPath>
+        <groupDef>Misc</groupDef>
+        <impact>2</impact>
+        <randomizationSelectionWeightFactor>0</randomizationSelectionWeightFactor>
+        <hiddenInChooseMemes>true</hiddenInChooseMemes>
+        <requireOne>
+            <li><li>Cannibalism_Abhorrent</li></li>
+            <li><li>Corpses_DontCare</li></li>
+            <li><li>Lovin_Free</li></li>
+            <li>
+                <li>MarriageName_AlwaysMans</li>
+                <li>MarriageName_Random</li>
+                <li>MarriageName_KeepNames</li>
+                <li>MarriageName_UsuallyWomans</li>
+                <li>MarriageName_AlwaysWomans</li>
+            </li>
+            <li><li>Charity_Essential</li></li>
+            <li><li>DrugUse_MedicalOrSocial</li></li>
+            <li><li>IdeoDiversity_Approved</li></li>
+            <li><li>Nudity_Male_UncoveredGroinDisapproved</li></li>
+            <li><li>Nudity_Female_UncoveredGroinOrChestDisapproved</li></li>
+            <li><li>OrganUse_Acceptable</li></li>
+            <li><li>Execution_HorribleIfInnocent</li></li>
+            <li><li>Research_VeryFast</li></li>
+            <li><li>Slavery_Abhorrent</li></li>
+            <li><li>Blinding_Horrible</li></li>
+            <li><li>Scarification_Horrible</li></li>
+            <li><li>FCP_Precept_Followers_Knowledge_Sacred</li></li>
+        </requireOne>
+    </MemeDef>
+
+    <!-- Universal Compassion -->
+
+    <MemeDef>
+        <defName>FCP_Meme_Followers_Compassion</defName>
+        <label>Universal Compassion</label>
+        <description>To the Followers, suffering knows no faction, and neither does aid. Raider or Ranger, wastelander or wanderer, anyone brought to a Followers' door is treated the same: fed, healed, and sent back into the world a little less broken than before. It's a creed that has cost them dearly more than once, but the Followers hold that a world capable of that kind of mercy is worth rebuilding.</description>
+        <iconPath>UI/Memes/OldWorldIdealism</iconPath>
+        <groupDef>Misc</groupDef>
+        <impact>2</impact>
+        <randomizationSelectionWeightFactor>0</randomizationSelectionWeightFactor>
+        <hiddenInChooseMemes>true</hiddenInChooseMemes>
+        <requireOne>
+            <li>
+                <li>FCP_IdeoRole_Followers_Administrator</li>
+            </li>
+        </requireOne>
+    </MemeDef>
+
+    <!--__________ Precepts __________-->
+
+    <!-- Knowledge is Sacred -->
+
+    <IssueDef>
+        <defName>FCP_Issue_Followers_Special</defName>
+        <label>Followers of the Apocalypse lore</label>
+        <allowMultiplePrecepts>true</allowMultiplePrecepts>
+    </IssueDef>
+
+    <PreceptDef>
+        <defName>FCP_Precept_Followers_Knowledge_Sacred</defName>
+        <issue>FCP_Issue_Followers_Special</issue>
+        <label>knowledge must be shared</label>
+        <description>Hoarding knowledge is its own kind of violence. What the Followers learn, they teach.</description>
+        <impact>High</impact>
+        <displayOrderInImpact>100</displayOrderInImpact>
+        <conflictingMemes />
+        <requiredMemes>
+            <li>FCP_Meme_Followers_Knowledge</li>
+        </requiredMemes>
+        <selectionWeight>1.0</selectionWeight>
+        <canGenerateAsSpecialPrecept>false</canGenerateAsSpecialPrecept>
+        <visible>true</visible>
+        <ignoreLimitsInEditMode>false</ignoreLimitsInEditMode>
+        <countsTowardsPreceptLimit>true</countsTowardsPreceptLimit>
+    </PreceptDef>
+
+    <!--__________ Roles __________-->
+
+    <!-- Administrator Role -->
+
+    <PreceptDef ParentName="PreceptRoleMultiBase">
+        <defName>FCP_IdeoRole_Followers_Administrator</defName>
+        <label>Administrator</label>
+        <description>Administrators run the Followers' chapters, balancing the endless demand for medicine and teaching against what little the wasteland provides. They answer to no higher authority but their own conscience and the Followers' founding charter.</description>
+        <iconPath>UI/Memes/OldWorldIdealism</iconPath>
+        <nameMaker>NamerRoleMoralist</nameMaker>
+        <roleRequirements>
+            <li Class="RoleRequirement_MinSkillAny">
+                <skills>
+                    <Intellectual>6</Intellectual>
+                    <Social>8</Social>
+                </skills>
+            </li>
+        </roleRequirements>
+        <roleRequiredWorkTags>
+            <li>Intellectual</li>
+            <li>Social</li>
+        </roleRequiredWorkTags>
+        <roleTags>
+            <li>SocialRole</li>
+        </roleTags>
+        <requiredMemes>
+            <li>FCP_Meme_Followers_Compassion</li>
+        </requiredMemes>
+        <roleEffects>
+            <li Class="RoleEffect_PawnStatOffset">
+                <statDef>NegotiationAbility</statDef>
+                <modifier>0.20</modifier>
+            </li>
+            <li Class="RoleEffect_PawnStatOffset">
+                <statDef>MedicalTendQualityOffset</statDef>
+                <modifier>0.10</modifier>
+            </li>
+            <li Class="RoleEffect_PawnStatOffset">
+                <statDef>SocialImpact</statDef>
+                <modifier>0.20</modifier>
+            </li>
+        </roleEffects>
+        <grantedAbilities>
+            <li>LeaderSpeech</li>
+        </grantedAbilities>
+        <displayOrderInImpact>1</displayOrderInImpact>
+        <roleDisabledWorkTags>
+            <li>Violent</li>
+        </roleDisabledWorkTags>
+        <roleApparelRequirements>
+            <li>
+                <requirement>
+                    <bodyPartGroupsMatchAny>
+                        <li>Torso</li>
+                    </bodyPartGroupsMatchAny>
+                    <requiredTags>
+                        <li>FCP_Followers_Apparel</li>
+                    </requiredTags>
+                </requirement>
+            </li>
+        </roleApparelRequirements>
+    </PreceptDef>
+
+</Defs>

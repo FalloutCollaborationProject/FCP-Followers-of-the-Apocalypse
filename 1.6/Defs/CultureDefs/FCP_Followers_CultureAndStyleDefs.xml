@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!--__________ Cultures and Styles __________-->
+
+    <!--_____ Cultures _____-->
+
+    <!-- Followers of the Apocalypse -->
+
+    <CultureDef>
+        <defName>FCP_Culture_Followers</defName>
+        <label>Followers of the Apocalypse</label>
+        <description>The Followers of the Apocalypse are secular humanitarians dedicated to healing the sick and preserving the knowledge of the old world, treating anyone who comes to their door regardless of allegiance.</description>
+        <pawnNameMaker>FCP_Retro_Namer_Male</pawnNameMaker>
+        <pawnNameMakerFemale>FCP_Retro_Namer_Female</pawnNameMakerFemale>
+        <ideoNameMaker MayRequire="Ludeon.RimWorld.Ideology">NamerIdeoGlobal</ideoNameMaker>
+        <leaderTitleMaker MayRequire="Ludeon.RimWorld.Ideology">FCP_LeaderTitleMaker_Followers</leaderTitleMaker>
+        <festivalNameMaker MayRequire="Ludeon.RimWorld.Ideology">NamerFestivalGlobal</festivalNameMaker>
+        <allowedPlaceTags>
+            <li>OriginSpacer</li>
+        </allowedPlaceTags>
+        <iconPath>World/WorldObjects/DefaultSettlement</iconPath>
+        <styleItemTags>
+            <li>
+                <tag>Urban</tag>
+                <baseWeight>1.1</baseWeight>
+                <weightFactor>1</weightFactor>
+            </li>
+            <li>
+                <tag>Rural</tag>
+                <baseWeight>0.6</baseWeight>
+                <weightFactor>1</weightFactor>
+            </li>
+            <li>
+                <tag>NoBeard</tag>
+                <baseWeight>1.25</baseWeight>
+                <weightFactor>1</weightFactor>
+            </li>
+            <li>
+                <tag>BeardUrban</tag>
+                <baseWeight>0.9</baseWeight>
+                <weightFactor>1</weightFactor>
+            </li>
+            <li>
+                <tag>NoTattoo</tag>
+                <baseWeight>1.1</baseWeight>
+                <weightFactor>1</weightFactor>
+            </li>
+            <li>
+                <tag>TattooUrban</tag>
+                <baseWeight>0.6</baseWeight>
+                <weightFactor>1</weightFactor>
+            </li>
+        </styleItemTags>
+    </CultureDef>
+
+    <!--_____ Leader Title Namer _____-->
+
+    <RulePackDef>
+        <defName>FCP_LeaderTitleMaker_Followers</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>r_leaderTitle->administrator</li>
+            </rulesStrings>
+        </rulePack>
+    </RulePackDef>
+
+    <!--_____ Faction Namer _____-->
+
+    <RulePackDef>
+        <defName>FCP_NamerFaction_Followers</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>r_name->Followers of the Apocalypse</li>
+            </rulesStrings>
+        </rulePack>
+    </RulePackDef>
+
+    <!--_____ Settlement Namer _____-->
+
+    <RulePackDef>
+        <defName>FCP_NamerSettlement_Followers</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>r_name->The Aid Post</li>
+                <li>r_name->Mercy Hall</li>
+                <li>r_name->The Free Clinic</li>
+                <li>r_name->Sanctuary Gate</li>
+                <li>r_name->The Archive</li>
+                <li>r_name->Charity House</li>
+                <li>r_name->The Infirmary</li>
+                <li>r_name->Old Mormon Fort</li>
+            </rulesStrings>
+        </rulePack>
+    </RulePackDef>
+
+    <!--_____ Player Faction Namer _____-->
+
+    <RulePackDef>
+        <defName>FCP_NamerFaction_Followers_Player</defName>
+        <rulePack>
+            <rulesStrings>
+                <li>r_name->The [chapterWord] Chapter</li>
+                <li>r_name->[chapterWord] Aid Mission</li>
+
+                <li>chapterWord->Reclaimed</li>
+                <li>chapterWord->New Dawn</li>
+                <li>chapterWord->Wayfarer</li>
+                <li>chapterWord->Lantern</li>
+                <li>chapterWord->Open Hand</li>
+                <li>chapterWord->Second Chance</li>
+            </rulesStrings>
+        </rulePack>
+    </RulePackDef>
+
+</Defs>

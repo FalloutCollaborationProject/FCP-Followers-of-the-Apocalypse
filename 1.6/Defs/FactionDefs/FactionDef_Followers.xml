@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!--__________ Factions __________-->
+
+    <!-- Followers of the Apocalypse -->
+
+    <FactionDef ParentName="FactionBase">
+        <defName>FCP_Faction_Followers</defName>
+        <label>Followers of the Apocalypse</label>
+        <description>The Followers of the Apocalypse are a secular humanitarian organization dedicated to healing the sick and preserving the knowledge of the old world. Founded in the ashes of the Great War, the Followers forgo preaching in favor of medicine and charity, treating anyone who comes to their door regardless of allegiance. They keep no army worth the name and claim no territory by force, relying instead on their reputation for mercy to keep them safe in a wasteland that rarely offers any. Small chapters can be found wherever the wasteland's wounded gather, run by administrators who answer only to their own conscience and the Followers' founding charter.</description>
+        <basicMemberKind>FCP_Pawnkind_Followers_Aide</basicMemberKind>
+        <colorSpectrum>
+            <li>(1, 1, 1)</li>
+        </colorSpectrum>
+        <maxConfigurableAtWorldCreation>3</maxConfigurableAtWorldCreation>
+        <factionNameMaker>FCP_NamerFaction_Followers</factionNameMaker>
+        <settlementNameMaker>FCP_NamerSettlement_Followers</settlementNameMaker>
+        <pawnSingular>Follower</pawnSingular>
+        <pawnsPlural>Followers</pawnsPlural>
+        <categoryTag>Outlander</categoryTag>
+        <settlementGenerationWeight>0.08</settlementGenerationWeight>
+        <requiredCountAtGameStart>1</requiredCountAtGameStart>
+        <canSiege>false</canSiege>
+        <canStageAttacks>false</canStageAttacks>
+        <leaderTitle>administrator</leaderTitle>
+        <fixedLeaderKinds>
+            <li>FCP_Pawnkind_Followers_Administrator</li>
+        </fixedLeaderKinds>
+        <factionIconPath>World_Icon/FCP_Followers_World_Icon</factionIconPath>
+        <techLevel>Industrial</techLevel>
+        <allowedCultures>
+            <li>FCP_Culture_Followers</li>
+        </allowedCultures>
+
+        <!--__________ Ideology __________-->
+
+        <fixedIdeo>true</fixedIdeo>
+        <ideoName>Followers Humanism</ideoName>
+        <ideoDescription>Knowledge is the one thing the old world left behind worth saving, and suffering is the one thing the new world offers in endless supply. Between the two lies the Followers' whole purpose: heal what can be healed, teach what can be taught, and turn no one away for what faction they wear.</ideoDescription>
+        <forcedMemes>
+            <!-- Structure -->
+            <li MayRequire="Ludeon.RimWorld.Ideology">Structure_Ideological</li>
+            <!-- Memes -->
+            <li MayRequire="Ludeon.RimWorld.Ideology">FCP_Meme_Followers_Knowledge</li>
+            <li MayRequire="Ludeon.RimWorld.Ideology">FCP_Meme_Followers_Compassion</li>
+        </forcedMemes>
+        <requiredPreceptsOnly>true</requiredPreceptsOnly>
+        <disallowedPrecepts>
+            <li MayRequire="Ludeon.RimWorld.Ideology">Slavery_Acceptable</li>
+            <li MayRequire="Ludeon.RimWorld.Ideology">Slavery_Honorable</li>
+            <li MayRequire="Ludeon.RimWorld.Ideology">Cannibalism_Acceptable</li>
+            <li MayRequire="Ludeon.RimWorld.Ideology">Cannibalism_Preferred</li>
+            <li MayRequire="Ludeon.RimWorld.Ideology">Cannibalism_RequiredStrong</li>
+            <li MayRequire="Ludeon.RimWorld.Ideology">Cannibalism_RequiredRavenous</li>
+        </disallowedPrecepts>
+
+        <!--__________ Biotech __________-->
+
+        <xenotypeSet>
+            <xenotypeChances>
+                <Neanderthal MayRequire="Ludeon.RimWorld.Biotech">0</Neanderthal>
+                <Hussar MayRequire="Ludeon.RimWorld.Biotech">0</Hussar>
+                <Pigskin MayRequire="Ludeon.RimWorld.Biotech">0</Pigskin>
+                <Yttakin MayRequire="Ludeon.RimWorld.Biotech">0</Yttakin>
+                <Genie MayRequire="Ludeon.RimWorld.Biotech">0</Genie>
+                <Dirtmole MayRequire="Ludeon.RimWorld.Biotech">0</Dirtmole>
+                <Highmate MayRequire="Ludeon.RimWorld.Biotech">0</Highmate>
+            </xenotypeChances>
+        </xenotypeSet>
+
+        <!--__________ Backstories __________-->
+
+        <backstoryFilters>
+            <li>
+                <categories>
+                    <li>FCP_Followers</li>
+                    <li>FCP_Followers_Child</li>
+                </categories>
+            </li>
+        </backstoryFilters>
+
+        <!--__________ Kinds __________-->
+
+        <caravanTraderKinds>
+            <li>Caravan_Outlander_CombatSupplier</li>
+        </caravanTraderKinds>
+        <visitorTraderKinds>
+            <li>Visitor_Outlander_Standard</li>
+        </visitorTraderKinds>
+        <baseTraderKinds>
+            <li>Base_Outlander_Standard</li>
+        </baseTraderKinds>
+        <allowedArrivalTemperatureRange>-40~45</allowedArrivalTemperatureRange>
+        <maxPawnCostPerTotalPointsCurve>
+            <points>
+                <li>(0,35)</li>
+                <li>(70, 50)</li>
+                <li>(700, 90)</li>
+                <li>(1300, 120)</li>
+                <li>(100000, 10000)</li>
+            </points>
+        </maxPawnCostPerTotalPointsCurve>
+
+        <!--__________ Group Makers __________-->
+
+        <pawnGroupMakers>
+
+            <!-- Aid Convoy -->
+
+            <li>
+                <kindDef>Peaceful</kindDef>
+                <options>
+                    <FCP_Pawnkind_Followers_Aide>10</FCP_Pawnkind_Followers_Aide>
+                    <FCP_Pawnkind_Followers_Doctor>4</FCP_Pawnkind_Followers_Doctor>
+                    <FCP_Pawnkind_Followers_Administrator>1</FCP_Pawnkind_Followers_Administrator>
+                </options>
+            </li>
+
+            <!-- Chapter Guard -->
+
+            <li Class="FCP.Core.GroupMakerWithCustomChar">
+                <kindDef>Combat</kindDef>
+                <disallowedStrategies>
+                    <li>EmergeFromWater</li>
+                </disallowedStrategies>
+                <options>
+                    <FCP_Pawnkind_Followers_Guard>10</FCP_Pawnkind_Followers_Guard>
+                    <FCP_Pawnkind_Followers_Doctor>2</FCP_Pawnkind_Followers_Doctor>
+                </options>
+                <characterDefs>
+                    <li>FCP_Character_Followers_Beatrix_Russell</li>
+                </characterDefs>
+                <characterChance>0.30</characterChance>
+            </li>
+
+            <!-- Traveling Aid Mission -->
+
+            <li Class="FCP.Core.GroupMakerWithCustomChar">
+                <kindDef>Peaceful</kindDef>
+                <options>
+                    <FCP_Pawnkind_Followers_Doctor>8</FCP_Pawnkind_Followers_Doctor>
+                    <FCP_Pawnkind_Followers_Guard>4</FCP_Pawnkind_Followers_Guard>
+                </options>
+                <characterDefs>
+                    <li>FCP_Character_Followers_Arcade_Gannon</li>
+                </characterDefs>
+                <characterChance>0.20</characterChance>
+            </li>
+
+            <!-- Chapter Leadership -->
+
+            <li Class="FCP.Core.GroupMakerWithCustomChar">
+                <kindDef>Settlement</kindDef>
+                <options>
+                    <FCP_Pawnkind_Followers_Aide>10</FCP_Pawnkind_Followers_Aide>
+                    <FCP_Pawnkind_Followers_Doctor>6</FCP_Pawnkind_Followers_Doctor>
+                    <FCP_Pawnkind_Followers_Guard>3</FCP_Pawnkind_Followers_Guard>
+                    <FCP_Pawnkind_Followers_Administrator>1</FCP_Pawnkind_Followers_Administrator>
+                </options>
+                <characterDefs>
+                    <li>FCP_Character_Followers_Julie_Farkas</li>
+                    <li>FCP_Character_Followers_Arcade_Gannon</li>
+                    <li>FCP_Character_Followers_Beatrix_Russell</li>
+                </characterDefs>
+                <characterChance>0.25</characterChance>
+            </li>
+        </pawnGroupMakers>
+        <settlementTexturePath>World/WorldObjects/DefaultSettlement</settlementTexturePath>
+        <naturalEnemy>false</naturalEnemy>
+        <permanentEnemy>false</permanentEnemy>
+        <modExtensions>
+            <!-- Ideology settings -->
+            <li Class="FCP.Factions.FactionExtension_FixedIdeo" MayRequire="Ludeon.RimWorld.Ideology">
+                <ideoIconDef>OliveBranches</ideoIconDef>
+                <ideoColorDef>LightGrey</ideoColorDef>
+                <memberName>Follower</memberName>
+                <adjective>Followers</adjective>
+                <roleOverrides>
+                    <li>
+                        <preceptDef>IdeoRole_Leader</preceptDef>
+                        <newName>Administrator</newName>
+                        <disableApparelRequirements>true</disableApparelRequirements>
+                    </li>
+                </roleOverrides>
+            </li>
+        </modExtensions>
+    </FactionDef>
+
+</Defs>

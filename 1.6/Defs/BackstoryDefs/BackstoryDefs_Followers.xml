@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!--__________ Followers of the Apocalypse Generic Backstories __________-->
+
+    <!--_____ Childhood _____-->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Followers_Child_Raised_In_Chapter</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <title>chapter-raised</title>
+        <titleShort>chapter kid</titleShort>
+        <baseDesc>[PAWN_nameDef] grew up inside a Followers chapter, surrounded by the sick and the desperate, and learned early that helping people costs more than it pays.</baseDesc>
+        <slot>Childhood</slot>
+        <spawnCategories>
+            <li>FCP_Followers_Child</li>
+        </spawnCategories>
+        <skillGains>
+            <Social>2</Social>
+            <Medicine>2</Medicine>
+        </skillGains>
+    </BackstoryDef>
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Followers_Child_Refugee</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <title>taken in</title>
+        <titleShort>refugee</titleShort>
+        <baseDesc>[PAWN_nameDef] was found half-starved on a Followers doorstep and never turned away. [PAWN_pronoun] never forgot the debt.</baseDesc>
+        <slot>Childhood</slot>
+        <spawnCategories>
+            <li>FCP_Followers_Child</li>
+        </spawnCategories>
+        <skillGains>
+            <Social>2</Social>
+            <Plants>2</Plants>
+        </skillGains>
+    </BackstoryDef>
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Followers_Child_Book_Scavenger</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <title>book scavenger</title>
+        <titleShort>scavenger</titleShort>
+        <baseDesc>[PAWN_nameDef] earned [PAWN_possessive] keep hauling salvaged books and pre-War manuals back to the chapter library, one crumbling box at a time.</baseDesc>
+        <slot>Childhood</slot>
+        <spawnCategories>
+            <li>FCP_Followers_Child</li>
+        </spawnCategories>
+        <skillGains>
+            <Intellectual>3</Intellectual>
+            <Mining>1</Mining>
+        </skillGains>
+    </BackstoryDef>
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Followers_Child_Clinic_Errand</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <title>clinic errand runner</title>
+        <titleShort>errand runner</titleShort>
+        <baseDesc>[PAWN_nameDef] spent [PAWN_possessive] childhood fetching bandages and boiled water for the chapter's doctors, too small to help with much else.</baseDesc>
+        <slot>Childhood</slot>
+        <spawnCategories>
+            <li>FCP_Followers_Child</li>
+        </spawnCategories>
+        <skillGains>
+            <Medicine>3</Medicine>
+            <Social>1</Social>
+        </skillGains>
+    </BackstoryDef>
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Followers_Child_Caravan_Born</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <title>born on the road</title>
+        <titleShort>road-born</titleShort>
+        <baseDesc>[PAWN_nameDef] was born to a family of traveling Followers, moving from settlement to settlement wherever the sick needed tending most.</baseDesc>
+        <slot>Childhood</slot>
+        <spawnCategories>
+            <li>FCP_Followers_Child</li>
+        </spawnCategories>
+        <skillGains>
+            <Animals>2</Animals>
+            <Social>2</Social>
+        </skillGains>
+    </BackstoryDef>
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Followers_Child_Apprentice_Tinkerer</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <title>apprentice tinkerer</title>
+        <titleShort>tinkerer</titleShort>
+        <baseDesc>[PAWN_nameDef] took apart and rebuilt every broken machine the chapter could spare, chasing the same old-world curiosity that founded the Followers.</baseDesc>
+        <slot>Childhood</slot>
+        <spawnCategories>
+            <li>FCP_Followers_Child</li>
+        </spawnCategories>
+        <skillGains>
+            <Crafting>2</Crafting>
+            <Intellectual>2</Intellectual>
+        </skillGains>
+    </BackstoryDef>
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Followers_Child_Wasteland_Orphan</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <title>wasteland orphan</title>
+        <titleShort>orphan</titleShort>
+        <baseDesc>[PAWN_nameDef] lost [PAWN_possessive] family to raiders long before [PAWN_pronoun] understood what that meant, and grew up learning the Followers don't ask what happened to you before they help.</baseDesc>
+        <slot>Childhood</slot>
+        <spawnCategories>
+            <li>FCP_Followers_Child</li>
+        </spawnCategories>
+        <skillGains>
+            <Melee>2</Melee>
+            <Social>1</Social>
+        </skillGains>
+    </BackstoryDef>
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Followers_Child_Garden_Keeper</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <title>garden keeper</title>
+        <titleShort>gardener</titleShort>
+        <baseDesc>[PAWN_nameDef] tended the chapter's small garden as a child, one of the few reliable food sources for the patients who couldn't pay for their care.</baseDesc>
+        <slot>Childhood</slot>
+        <spawnCategories>
+            <li>FCP_Followers_Child</li>
+        </spawnCategories>
+        <skillGains>
+            <Plants>3</Plants>
+            <Cooking>1</Cooking>
+        </skillGains>
+    </BackstoryDef>
+
+    <!--_____ Adulthood _____-->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Followers_Adult_Field_Medic</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <title>field medic</title>
+        <titleShort>medic</titleShort>
+        <baseDesc>[PAWN_nameDef] treats whoever needs it, wherever [PAWN_pronoun] finds them, carrying a medical kit that's seen more use than rest.</baseDesc>
+        <slot>Adulthood</slot>
+        <spawnCategories>
+            <li>FCP_Followers</li>
+        </spawnCategories>
+        <skillGains>
+            <Medicine>7</Medicine>
+            <Social>3</Social>
+        </skillGains>
+    </BackstoryDef>
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Followers_Adult_Chapter_Aide</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <title>chapter aide</title>
+        <titleShort>aide</titleShort>
+        <baseDesc>[PAWN_nameDef] keeps a Followers chapter running: sorting supplies, greeting the desperate, and doing whatever needs doing that day.</baseDesc>
+        <slot>Adulthood</slot>
+        <spawnCategories>
+            <li>FCP_Followers</li>
+        </spawnCategories>
+        <skillGains>
+            <Social>5</Social>
+            <Crafting>3</Crafting>
+        </skillGains>
+    </BackstoryDef>
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Followers_Adult_Wandering_Teacher</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <title>wandering teacher</title>
+        <titleShort>teacher</titleShort>
+        <baseDesc>[PAWN_nameDef] travels the wasteland teaching whoever will listen to read, to farm, to treat a wound - anything the old world knew that the new one is at risk of forgetting.</baseDesc>
+        <slot>Adulthood</slot>
+        <spawnCategories>
+            <li>FCP_Followers</li>
+        </spawnCategories>
+        <skillGains>
+            <Intellectual>7</Intellectual>
+            <Social>4</Social>
+        </skillGains>
+    </BackstoryDef>
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Followers_Adult_Reluctant_Guard</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <title>reluctant guard</title>
+        <titleShort>guard</titleShort>
+        <baseDesc>[PAWN_nameDef] carries a gun so the rest of the chapter doesn't have to, a job nobody wants but somebody has to do.</baseDesc>
+        <slot>Adulthood</slot>
+        <spawnCategories>
+            <li>FCP_Followers</li>
+        </spawnCategories>
+        <skillGains>
+            <Shooting>6</Shooting>
+            <Melee>4</Melee>
+        </skillGains>
+    </BackstoryDef>
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Followers_Adult_Archivist</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <title>archivist</title>
+        <titleShort>archivist</titleShort>
+        <baseDesc>[PAWN_nameDef] catalogs and copies whatever pre-War knowledge the chapter recovers, convinced that losing it twice would be worse than the bombs themselves.</baseDesc>
+        <slot>Adulthood</slot>
+        <spawnCategories>
+            <li>FCP_Followers</li>
+        </spawnCategories>
+        <skillGains>
+            <Intellectual>8</Intellectual>
+            <Crafting>2</Crafting>
+        </skillGains>
+    </BackstoryDef>
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Followers_Adult_Caravan_Medic</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <title>caravan medic</title>
+        <titleShort>caravan medic</titleShort>
+        <baseDesc>[PAWN_nameDef] rides with trade caravans between settlements, trading medical care for safe passage and whatever supplies the chapter needs.</baseDesc>
+        <slot>Adulthood</slot>
+        <spawnCategories>
+            <li>FCP_Followers</li>
+        </spawnCategories>
+        <skillGains>
+            <Medicine>5</Medicine>
+            <Animals>3</Animals>
+            <Social>2</Social>
+        </skillGains>
+    </BackstoryDef>
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Followers_Adult_Convert</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <title>the convinced</title>
+        <titleShort>convert</titleShort>
+        <baseDesc>[PAWN_nameDef] came to the Followers a stranger and a skeptic, and stayed once [PAWN_pronoun] saw what unconditional aid actually looks like.</baseDesc>
+        <slot>Adulthood</slot>
+        <spawnCategories>
+            <li>FCP_Followers</li>
+        </spawnCategories>
+        <skillGains>
+            <Social>4</Social>
+            <Medicine>3</Medicine>
+            <Intellectual>2</Intellectual>
+        </skillGains>
+    </BackstoryDef>
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Followers_Adult_Farmer</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <title>chapter farmer</title>
+        <titleShort>farmer</titleShort>
+        <baseDesc>[PAWN_nameDef] keeps the chapter fed, coaxing food from ground that was never meant to grow anything again.</baseDesc>
+        <slot>Adulthood</slot>
+        <spawnCategories>
+            <li>FCP_Followers</li>
+        </spawnCategories>
+        <skillGains>
+            <Plants>7</Plants>
+            <Cooking>3</Cooking>
+        </skillGains>
+    </BackstoryDef>
+
+</Defs>

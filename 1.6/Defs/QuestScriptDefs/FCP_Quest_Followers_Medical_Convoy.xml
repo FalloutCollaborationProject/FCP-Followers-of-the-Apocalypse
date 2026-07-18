@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <QuestScriptDef>
+        <defName>FCP_Quest_Followers_Medical_Convoy</defName>
+        <rootSelectionWeight>1.0</rootSelectionWeight>
+        <rootMinPoints>25</rootMinPoints>
+        <defaultChallengeRating>1</defaultChallengeRating>
+        <canGiveRoyalFavor>true</canGiveRoyalFavor>
+        <expireDaysRange>5~10</expireDaysRange>
+        <questNameRules>
+            <rulesStrings>
+                <li>questName->The Convoy Doesn't Fight Back</li>
+                <li>questName->Medicine Under Fire</li>
+                <li>questName->Escort to Nowhere</li>
+                <li>questName->The Followers Ask a Favor</li>
+                <li>questName->Unarmed and Overrun</li>
+            </rulesStrings>
+        </questNameRules>
+        <questDescriptionRules>
+            <rulesStrings>
+                <li>questDescription->A Followers medical convoy has been pinned down by hostiles. The Followers carry no weapons worth the name, and [asker_nameFull] is asking outsiders to do what the Followers won't: fight. Clear the hostiles and the convoy's medicine is yours to split as payment.</li>
+                <li>questDescription->[asker_nameFull]: "Our convoy never made it past the ambush. They're pinned down with the wounded and no way to fight back. We don't carry guns. You do. Please."</li>
+                <li>questDescription->Word reaches [asker_nameFull] that a supply convoy has been ambushed short of its destination. The Followers won't take up arms even to save their own, but they'll pay well for someone who will.</li>
+                <li>questDescription->[asker_nameFull] fears the worst for a convoy overdue by two days. If hostiles have it pinned, the unarmed escort won't survive the week. Payment in medicine and goodwill for anyone willing to break the siege.</li>
+                <li>questDescription->A plea from [asker_nameFull]: hostiles have surrounded a Followers convoy carrying medicine meant for a dozen settlements. The Followers can heal what's broken afterward. They can't stop what's happening now.</li>
+            </rulesStrings>
+        </questDescriptionRules>
+        <root Class="QuestNode_Sequence">
+            <nodes>
+                <li Class="QuestNode_SubScript">
+                    <def>Util_RandomizePointsChallengeRating</def>
+                    <parms>
+                        <pointsFactorTwoStar>1.3</pointsFactorTwoStar>
+                        <pointsFactorThreeStar>1.7</pointsFactorThreeStar>
+                    </parms>
+                </li>
+                <li Class="QuestNode_SubScript">
+                    <def>Util_AdjustPointsForDistantFight</def>
+                </li>
+                <li Class="QuestNode_GetMap" />
+                <li Class="FCP.Core.RadiantQuests.QuestNode_GetFactionFromList">
+                    <storeAs>askerFaction</storeAs>
+                    <factionDefs>
+                        <li MayRequire="Rick.FCP.Followers">FCP_Faction_Followers</li>
+                    </factionDefs>
+                </li>
+                <li Class="FCP.Core.RadiantQuests.QuestNode_GetLeaderOfFaction">
+                    <storeAs>asker</storeAs>
+                    <factionToUse>$askerFaction</factionToUse>
+                </li>
+                <li Class="FCP.Core.RadiantQuests.QuestNode_GetFactionFromList">
+                    <storeAs>enemyFaction</storeAs>
+                    <factionDefs>
+                        <li MayRequire="Rick.FCP.Raiders">FCP_Faction_Raider</li>
+                        <li>PirateWaster</li>
+                    </factionDefs>
+                </li>
+                <li Class="QuestNode_GetSiteTile">
+                    <storeAs>siteTile</storeAs>
+                    <preferCloserTiles>true</preferCloserTiles>
+                </li>
+                <li Class="QuestNode_GetSitePartDefsByTagsAndFaction">
+                    <storeAs>sitePartDefs</storeAs>
+                    <storeFactionAs>siteFaction</storeFactionAs>
+                    <sitePartsTags>
+                        <li>
+                            <tag>FCP_Site_Followers_Convoy</tag>
+                        </li>
+                    </sitePartsTags>
+                    <mustBeHostileToFactionOf>$asker</mustBeHostileToFactionOf>
+                </li>
+                <li Class="QuestNode_GetDefaultSitePartsParams">
+                    <tile>$siteTile</tile>
+                    <faction>$siteFaction</faction>
+                    <sitePartDefs>$sitePartDefs</sitePartDefs>
+                    <storeSitePartsParamsAs>sitePartsParams</storeSitePartsParamsAs>
+                </li>
+                <li Class="QuestNode_SubScript">
+                    <def>Util_GenerateSite</def>
+                    <parms>
+                        <sitePartsParams>$sitePartsParams</sitePartsParams>
+                        <hiddenSitePartsPossible>true</hiddenSitePartsPossible>
+                    </parms>
+                </li>
+                <li Class="QuestNode_LoopCount">
+                    <loopCount>$(randInt(2,3))</loopCount>
+                    <node Class="QuestNode_GeneratePawn">
+                        <kindDef>FCP_Pawnkind_Followers_Aide</kindDef>
+                        <faction>$askerFaction</faction>
+                        <addToList>survivors</addToList>
+                        <allowAddictions>false</allowAddictions>
+                        <biocodeWeaponChance>1</biocodeWeaponChance>
+                        <biocodeApparelChance>1</biocodeApparelChance>
+                    </node>
+                </li>
+                <li Class="QuestNode_SetAllApparelLocked">
+                    <pawns>$survivors</pawns>
+                </li>
+                <li Class="QuestNode_SpawnWorldObjects">
+                    <worldObjects>$site</worldObjects>
+                    <defsToExcludeFromHyperlinks>Human</defsToExcludeFromHyperlinks>
+                </li>
+                <li Class="QuestNode_Signal">
+                    <inSignal>site.MapGenerated</inSignal>
+                    <node Class="QuestNode_Sequence">
+                        <nodes>
+                            <li Class="FCP.Core.RadiantQuests.QuestNode_SpawnSettlers">
+                                <inSignal>site.MapGenerated</inSignal>
+                                <pawns>$survivors</pawns>
+                                <radius>16</radius>
+                            </li>
+                            <li Class="QuestNode_Set">
+                                <name>pointsForRaiders</name>
+                                <value>$points</value>
+                            </li>
+                            <li Class="FCP.Core.RadiantQuests.QuestNode_GeneratePawns">
+                                <storeAs>raiders</storeAs>
+                                <faction>$enemyFaction</faction>
+                                <pawnGroupKind>Combat</pawnGroupKind>
+                                <pointsToUse>$pointsForRaiders</pointsToUse>
+                            </li>
+                            <li Class="FCP.Core.RadiantQuests.QuestNode_SpawnRaiders">
+                                <inSignal>site.MapGenerated</inSignal>
+                                <spawnOnEdge>false</spawnOnEdge>
+                                <pawns>$raiders</pawns>
+                                <radius>20</radius>
+                            </li>
+                        </nodes>
+                    </node>
+                </li>
+                <li Class="QuestNode_WorldObjectTimeout">
+                    <worldObject>$site</worldObject>
+                    <isQuestTimeout>true</isQuestTimeout>
+                    <delayTicks>$(randInt(10,20)*60000)</delayTicks>
+                    <inSignalDisable>site.MapGenerated</inSignalDisable>
+                    <node Class="QuestNode_Sequence">
+                        <nodes>
+                            <li Class="QuestNode_Letter">
+                                <label>Convoy lost</label>
+                                <text>The convoy went silent before help arrived. The Followers mourn quietly, as they always do.</text>
+                            </li>
+                            <li Class="QuestNode_End">
+                                <outcome>Fail</outcome>
+                                <goodwillChangeAmount>-5</goodwillChangeAmount>
+                                <goodwillChangeFactionOf>$asker</goodwillChangeFactionOf>
+                            </li>
+                        </nodes>
+                    </node>
+                </li>
+                <li Class="QuestNode_Signal">
+                    <inSignal>site.AllEnemiesDefeated</inSignal>
+                    <node Class="QuestNode_Sequence">
+                        <nodes>
+                            <li Class="QuestNode_AnyPawnAlive">
+                                <pawns>$survivors</pawns>
+                                <node Class="QuestNode_Sequence">
+                                    <nodes>
+                                        <li Class="QuestNode_Letter">
+                                            <letterDef>PositiveEvent</letterDef>
+                                            <label>Convoy saved</label>
+                                            <text>The hostiles are dead and the convoy survives. The Followers won't forget this.</text>
+                                        </li>
+                                        <li Class="QuestNode_GiveRewards">
+                                            <parms>
+                                                <allowGoodwill>true</allowGoodwill>
+                                                <allowRoyalFavor>true</allowRoyalFavor>
+                                                <chosenPawnSignal>ChosenPawnForReward</chosenPawnSignal>
+                                            </parms>
+                                            <addCampLootReward>true</addCampLootReward>
+                                            <customLetterLabel>Payment arrived</customLetterLabel>
+                                            <customLetterText>Medicine and thanks from the Followers, delivered as promised.</customLetterText>
+                                            <nodeIfChosenPawnSignalUsed Class="QuestNode_Letter">
+                                                <letterDef>ChoosePawn</letterDef>
+                                                <label TKey="LetterLabelFavorReceiver">[asker_faction_royalFavorLabel]</label>
+                                                <text TKey="LetterTextFavorReceiver">These colonists participated in the victory for the quest [resolvedQuestName]. [asker_definite] wants to know who should receive the [royalFavorReward_amount] [asker_faction_royalFavorLabel] for this service.</text>
+                                                <useColonistsOnMap>$site</useColonistsOnMap>
+                                                <chosenPawnSignal>ChosenPawnForReward</chosenPawnSignal>
+                                            </nodeIfChosenPawnSignalUsed>
+                                        </li>
+                                        <li Class="QuestNode_End">
+                                            <outcome>Success</outcome>
+                                        </li>
+                                    </nodes>
+                                </node>
+                            </li>
+                            <li Class="QuestNode_Letter">
+                                <label>Too late</label>
+                                <letterDef>NegativeEvent</letterDef>
+                                <text>The hostiles are dead, but the convoy's aides didn't make it. The Followers grieve them as family.</text>
+                            </li>
+                            <li Class="QuestNode_End">
+                                <outcome>Fail</outcome>
+                                <goodwillChangeAmount>-5</goodwillChangeAmount>
+                                <goodwillChangeFactionOf>$asker</goodwillChangeFactionOf>
+                            </li>
+                        </nodes>
+                    </node>
+                </li>
+                <li Class="QuestNode_Signal">
+                    <inSignal>site.Destroyed</inSignal>
+                    <node Class="QuestNode_Sequence">
+                        <nodes>
+                            <li Class="QuestNode_Letter">
+                                <label>Convoy lost</label>
+                                <text>Without help in time, the convoy was overrun.</text>
+                            </li>
+                            <li Class="QuestNode_End">
+                                <outcome>Fail</outcome>
+                                <goodwillChangeAmount>-5</goodwillChangeAmount>
+                                <goodwillChangeFactionOf>$asker</goodwillChangeFactionOf>
+                            </li>
+                        </nodes>
+                    </node>
+                </li>
+            </nodes>
+        </root>
+    </QuestScriptDef>
+
+</Defs>

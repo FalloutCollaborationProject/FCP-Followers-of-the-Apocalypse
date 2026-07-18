@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+
+    <!-- About Information -->
+
+    <packageId>Rick.FCP.Followers</packageId>
+    <author>Rick</author>
+    <name>FCP - Followers of the Apocalypse</name>
+    <description>The Fallout Collaboration Project Presents: Followers of the Apocalypse, an ideology and faction mod.</description>
+    <url>https://github.com/FalloutCollaborationProject/FCP-Followers-of-the-Apocalypse</url>
+    <supportedVersions>
+        <li>1.6</li>
+    </supportedVersions>
+    <modDependencies>
+        <li>
+            <packageId>Rick.FCP.Core.Tools</packageId>
+            <displayName>FCP - Tools</displayName>
+            <downloadUrl>https://github.com/FalloutCollaborationProject/FCP-Tools</downloadUrl>
+        </li>
+        <li>
+            <packageId>Rick.FCP.Wastelanders</packageId>
+            <displayName>FCP - Wastelanders</displayName>
+            <downloadUrl>https://github.com/FalloutCollaborationProject/FCP-Wastelanders</downloadUrl>
+        </li>
+    </modDependencies>
+    <loadAfter>
+        <li>Rick.FCP.Core.Tools</li>
+        <li>Rick.FCP.Wastelanders</li>
+        <li>Ludeon.RimWorld.Ideology</li>
+    </loadAfter>
+
+</ModMetaData>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--__________ Scenarios __________-->
+
+    <!--_____ Followers of the Apocalypse _____-->
+
+    <ScenarioDef ParentName="ScenarioBase">
+        <defName>FCP_Scenario_Followers_New_Chapter</defName>
+        <label>New Chapter</label>
+        <description>Word of a new Followers chapter has spread. A handful of aides, a doctor, and whatever medicine they could carry have set out to build something worth trusting in a wasteland that rarely gives anyone a reason to.</description>
+        <scenario>
+            <summary>A small band of Followers of the Apocalypse strike out to found a new chapter.</summary>
+            <playerFaction>
+                <def>PlayerFaction</def>
+                <factionDef>FCP_Faction_Followers_Player</factionDef>
+            </playerFaction>
+            <parts>
+
+                <!-- Config pages -->
+                <li Class="ScenPart_ConfigPage_ConfigureStartingPawns_KindDefs">
+                    <def>ConfigurePawnsKindDefs</def>
+                    <pawnChoiceCount>6</pawnChoiceCount>
+                    <leftBehindPawnKind MayRequire="Rick.FCP.Followers">FCP_Pawnkind_Followers_Aide</leftBehindPawnKind>
+                    <kindCounts>
+                        <li>
+                            <kindDef MayRequire="Rick.FCP.Followers">FCP_Pawnkind_Followers_Doctor</kindDef>
+                            <count>1</count>
+                            <requiredAtStart>true</requiredAtStart>
+                        </li>
+                        <li>
+                            <kindDef MayRequire="Rick.FCP.Followers">FCP_Pawnkind_Followers_Aide</kindDef>
+                            <count>2</count>
+                            <requiredAtStart>false</requiredAtStart>
+                        </li>
+                        <li>
+                            <kindDef MayRequire="Rick.FCP.Followers">FCP_Pawnkind_Followers_Guard</kindDef>
+                            <count>1</count>
+                            <requiredAtStart>false</requiredAtStart>
+                        </li>
+                    </kindCounts>
+                </li>
+
+                <!-- Player starting stuff spawn method -->
+                <li Class="ScenPart_PlayerPawnsArriveMethod">
+                    <def>PlayerPawnsArriveMethod</def>
+                    <method>Standing</method>
+                </li>
+
+                <!-- Player starting things -->
+                <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>Silver</thingDef>
+                    <count>250</count>
+                </li>
+                <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>MedicineIndustrial</thingDef>
+                    <count>15</count>
+                </li>
+                <li Class="ScenPart_StartingThing_Defined">
+                    <def>StartingThing_Defined</def>
+                    <thingDef>MealSurvivalPack</thingDef>
+                    <count>15</count>
+                </li>
+
+                <!-- Game start dialog -->
+                <li Class="ScenPart_GameStartDialog">
+                    <def>GameStartDialog</def>
+                    <text>The old chapter couldn't take everyone in when it closed its doors. Rather than scatter, a few of you decided to start over somewhere the wasteland hadn't already given up on.\n\nYou don't have much. A little medicine, fewer weapons than you'd like, and the same charter that's kept the Followers alive since the bombs fell: help whoever asks, teach whoever will listen, and never turn away the desperate.\n\nSomewhere out there is a spot worth calling home.</text>
+                </li>
+
+            </parts>
+        </scenario>
+    </ScenarioDef>
+
+</Defs>

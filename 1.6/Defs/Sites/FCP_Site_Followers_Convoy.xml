@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--__________ Site Defs __________-->
+
+    <!-- Ambushed Convoy -->
+
+    <SitePartDef>
+        <defName>FCP_Site_Followers_Convoy</defName>
+        <label>ambushed convoy</label>
+        <description>A Followers medical convoy pinned down by hostiles.</description>
+        <workerClass>SitePartWorker_Outpost</workerClass>
+        <siteTexture>World/WorldObjects/DefaultSettlement</siteTexture>
+        <expandingIconTexture>MapIcons/Sites/FCP_Generic_Quest_Site</expandingIconTexture>
+        <forceExitAndRemoveMapCountdownDurationDays>6</forceExitAndRemoveMapCountdownDurationDays>
+        <requiresFaction>true</requiresFaction>
+        <wantsThreatPoints>true</wantsThreatPoints>
+        <tags>
+            <li>FCP_Site_Followers_Convoy</li>
+        </tags>
+    </SitePartDef>
+
+    <GenStepDef>
+        <defName>FCP_Site_Followers_Convoy_Outpost</defName>
+        <linkWithSite>FCP_Site_Followers_Convoy</linkWithSite>
+        <order>450</order>
+        <genStep Class="GenStep_Outpost"/>
+    </GenStepDef>
+
+</Defs>

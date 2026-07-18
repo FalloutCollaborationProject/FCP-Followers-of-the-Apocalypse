@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!--__________ Followers of the Apocalypse Pawnkinds __________-->
+
+    <!--___ Base Definition ___-->
+
+    <PawnKindDef Name="FCP_FollowerskindBase" Abstract="true">
+        <race>Human</race>
+        <defaultFactionType>FCP_Faction_Followers</defaultFactionType>
+        <chemicalAddictionChance>0.05</chemicalAddictionChance>
+        <invNutrition>2.55</invNutrition>
+        <itemQuality>Normal</itemQuality>
+        <backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
+        <minGenerationAge>20</minGenerationAge>
+        <maxGenerationAge>65</maxGenerationAge>
+        <apparelIgnoreSeasons>true</apparelIgnoreSeasons>
+        <backstoryFiltersOverride>
+            <li>
+                <categoriesChildhood>
+                    <li>FCP_Followers_Child</li>
+                </categoriesChildhood>
+                <categoriesAdulthood>
+                    <li>FCP_Followers</li>
+                </categoriesAdulthood>
+            </li>
+        </backstoryFiltersOverride>
+    </PawnKindDef>
+
+    <!-- Aide -->
+
+    <PawnKindDef ParentName="FCP_FollowerskindBase">
+        <defName>FCP_Pawnkind_Followers_Aide</defName>
+        <label>Followers aide</label>
+        <combatPower>30</combatPower>
+        <gearHealthRange>0.6~0.9</gearHealthRange>
+        <apparelMoney>150~300</apparelMoney>
+        <apparelTags>
+            <li MayRequire="Rick.FCP.Wastelanders">FCP_Wastelander_Apparel</li>
+        </apparelTags>
+        <apparelAllowHeadgearChance>0.3</apparelAllowHeadgearChance>
+        <weaponMoney>0~120</weaponMoney>
+        <weaponTags>
+            <li>Gun</li>
+            <li MayRequire="Rick.FCP.BallisticWeapons">FCP_Pistol</li>
+        </weaponTags>
+        <initialResistanceRange>4~8</initialResistanceRange>
+        <initialWillRange>2~6</initialWillRange>
+    </PawnKindDef>
+
+    <!-- Doctor -->
+
+    <PawnKindDef ParentName="FCP_FollowerskindBase">
+        <defName>FCP_Pawnkind_Followers_Doctor</defName>
+        <label>Followers doctor</label>
+        <combatPower>45</combatPower>
+        <gearHealthRange>0.7~1.0</gearHealthRange>
+        <apparelMoney>300~500</apparelMoney>
+        <apparelRequired>
+            <li>FCP_Apparel_Lab_Coat_Followers</li>
+        </apparelRequired>
+        <apparelTags>
+            <li MayRequire="Rick.FCP.Wastelanders">FCP_Wastelander_Apparel</li>
+        </apparelTags>
+        <apparelAllowHeadgearChance>0.2</apparelAllowHeadgearChance>
+        <weaponMoney>0~150</weaponMoney>
+        <weaponTags>
+            <li>Gun</li>
+            <li MayRequire="Rick.FCP.BallisticWeapons">FCP_Pistol</li>
+        </weaponTags>
+        <initialResistanceRange>5~10</initialResistanceRange>
+        <initialWillRange>4~8</initialWillRange>
+    </PawnKindDef>
+
+    <!-- Guard -->
+
+    <PawnKindDef ParentName="FCP_FollowerskindBase">
+        <defName>FCP_Pawnkind_Followers_Guard</defName>
+        <label>Followers guard</label>
+        <combatPower>80</combatPower>
+        <gearHealthRange>0.7~0.95</gearHealthRange>
+        <apparelMoney>350~600</apparelMoney>
+        <apparelTags>
+            <li MayRequire="Rick.FCP.Wastelanders">FCP_Wastelander_Apparel</li>
+        </apparelTags>
+        <apparelAllowHeadgearChance>0.6</apparelAllowHeadgearChance>
+        <weaponMoney>250~500</weaponMoney>
+        <weaponTags>
+            <li>Gun</li>
+            <li MayRequire="Rick.FCP.BallisticWeapons">FCP_Pistol</li>
+            <li MayRequire="Rick.FCP.BallisticWeapons">FCP_Shotgun</li>
+        </weaponTags>
+        <requiredWorkTags>
+            <li>Violent</li>
+        </requiredWorkTags>
+        <initialResistanceRange>8~15</initialResistanceRange>
+        <initialWillRange>4~9</initialWillRange>
+    </PawnKindDef>
+
+    <!-- Administrator -->
+
+    <PawnKindDef ParentName="FCP_FollowerskindBase">
+        <defName>FCP_Pawnkind_Followers_Administrator</defName>
+        <label>Followers administrator</label>
+        <factionLeader>true</factionLeader>
+        <combatPower>60</combatPower>
+        <gearHealthRange>0.8~1.0</gearHealthRange>
+        <apparelMoney>400~650</apparelMoney>
+        <apparelRequired>
+            <li>FCP_Apparel_Lab_Coat_Followers</li>
+        </apparelRequired>
+        <apparelTags>
+            <li MayRequire="Rick.FCP.Wastelanders">FCP_Wastelander_Apparel</li>
+        </apparelTags>
+        <apparelAllowHeadgearChance>0.4</apparelAllowHeadgearChance>
+        <weaponMoney>100~250</weaponMoney>
+        <weaponTags>
+            <li>Gun</li>
+            <li MayRequire="Rick.FCP.BallisticWeapons">FCP_Pistol</li>
+        </weaponTags>
+        <requiredWorkTags>
+            <li>Social</li>
+        </requiredWorkTags>
+        <initialResistanceRange>10~18</initialResistanceRange>
+        <initialWillRange>6~12</initialWillRange>
+    </PawnKindDef>
+
+</Defs>
