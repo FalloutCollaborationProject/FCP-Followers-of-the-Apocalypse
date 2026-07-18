@@ -83,7 +83,8 @@
         <!--__________ Kinds __________-->
 
         <caravanTraderKinds>
-            <li>Caravan_Outlander_CombatSupplier</li>
+            <li>Caravan_Outlander_BulkGoods</li>
+            <li>FCP_Trader_Followers_Aid_Caravan</li>
         </caravanTraderKinds>
         <visitorTraderKinds>
             <li>Visitor_Outlander_Standard</li>
@@ -146,6 +147,27 @@
                     <li>FCP_Character_Followers_Arcade_Gannon</li>
                 </characterDefs>
                 <characterChance>0.20</characterChance>
+            </li>
+
+            <!-- Aid Caravan -->
+
+            <li Class="FCP.Core.GroupMakerWithTraderKind">
+                <kindDef>Trader</kindDef>
+                <traderKinds>
+                    <li>FCP_Trader_Followers_Aid_Caravan</li>
+                    <li>Caravan_Outlander_BulkGoods</li>
+                </traderKinds>
+                <traders>
+                    <FCP_Pawnkind_Followers_Aid_Caravaner>1</FCP_Pawnkind_Followers_Aid_Caravaner>
+                </traders>
+                <carriers>
+                    <Muffalo>4</Muffalo>
+                    <Dromedary>3</Dromedary>
+                </carriers>
+                <guards>
+                    <FCP_Pawnkind_Followers_Guard>3</FCP_Pawnkind_Followers_Guard>
+                    <FCP_Pawnkind_Followers_Aide>4</FCP_Pawnkind_Followers_Aide>
+                </guards>
             </li>
 
             <!-- Chapter Leadership -->

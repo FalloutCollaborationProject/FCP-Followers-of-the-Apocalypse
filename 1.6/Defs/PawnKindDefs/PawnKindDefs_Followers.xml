@@ -97,6 +97,45 @@
         <initialWillRange>4~9</initialWillRange>
     </PawnKindDef>
 
+    <!-- Convalescent Patient -->
+
+    <PawnKindDef ParentName="FCP_FollowerskindBase">
+        <defName>FCP_Pawnkind_Followers_Patient</defName>
+        <label>convalescent patient</label>
+        <combatPower>5</combatPower>
+        <gearHealthRange>0.3~0.6</gearHealthRange>
+        <apparelMoney>50~120</apparelMoney>
+        <apparelTags>
+            <li MayRequire="Rick.FCP.Wastelanders">FCP_Wastelander_Apparel</li>
+        </apparelTags>
+        <apparelAllowHeadgearChance>0</apparelAllowHeadgearChance>
+        <weaponMoney>0</weaponMoney>
+        <initialResistanceRange>2~5</initialResistanceRange>
+        <initialWillRange>1~4</initialWillRange>
+    </PawnKindDef>
+
+    <!-- Aid Caravaner -->
+
+    <PawnKindDef ParentName="FCP_FollowerskindBase">
+        <defName>FCP_Pawnkind_Followers_Aid_Caravaner</defName>
+        <label>Followers aid caravaner</label>
+        <combatPower>35</combatPower>
+        <trader>true</trader>
+        <gearHealthRange>0.6~0.9</gearHealthRange>
+        <apparelMoney>200~350</apparelMoney>
+        <apparelTags>
+            <li MayRequire="Rick.FCP.Wastelanders">FCP_Wastelander_Apparel</li>
+        </apparelTags>
+        <apparelAllowHeadgearChance>0.25</apparelAllowHeadgearChance>
+        <weaponMoney>0~120</weaponMoney>
+        <weaponTags>
+            <li>Gun</li>
+            <li MayRequire="Rick.FCP.BallisticWeapons">FCP_Pistol</li>
+        </weaponTags>
+        <initialResistanceRange>4~8</initialResistanceRange>
+        <initialWillRange>2~6</initialWillRange>
+    </PawnKindDef>
+
     <!-- Administrator -->
 
     <PawnKindDef ParentName="FCP_FollowerskindBase">

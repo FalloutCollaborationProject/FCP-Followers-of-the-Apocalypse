@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <QuestScriptDef>
+        <defName>FCP_Quest_Followers_Aid_Delivery</defName>
+        <rootSelectionWeight>1.0</rootSelectionWeight>
+        <rootMinPoints>15</rootMinPoints>
+        <defaultChallengeRating>1</defaultChallengeRating>
+        <canGiveRoyalFavor>true</canGiveRoyalFavor>
+        <expireDaysRange>5~10</expireDaysRange>
+        <questNameRules>
+            <rulesStrings>
+                <li>questName->Aid for the Destitute</li>
+                <li>questName->Those Who Have Nothing</li>
+                <li>questName->A Camp in Need</li>
+                <li>questName->The Followers' Charity</li>
+                <li>questName->What the Wasteland Owes</li>
+            </rulesStrings>
+        </questNameRules>
+        <questDescriptionRules>
+            <rulesStrings>
+                <li>questDescription->A camp of wastelanders with nothing left has asked the Followers for help. [asker_nameFull] is sending aides with food and medicine, but the camp lies in country the Followers can't promise is safe. Keep the aid workers alive until the camp is back on its feet.</li>
+                <li>questDescription->[asker_nameFull]: "There's a camp not far from here with sick children and no medicine. We're sending what we can. We just need someone to make sure our people get there and back."</li>
+                <li>questDescription->Word reaches [asker_nameFull] of a camp starving and untreated. The Followers won't turn away anyone in need - but their aides carry medicine, not guns.</li>
+                <li>questDescription->[asker_nameFull] asks for help watching over an aid delivery. No one deserves to be turned away for what faction they wear, but the wasteland doesn't always agree.</li>
+            </rulesStrings>
+        </questDescriptionRules>
+        <root Class="QuestNode_Sequence">
+            <nodes>
+                <li Class="QuestNode_SubScript">
+                    <def>Util_RandomizePointsChallengeRating</def>
+                    <parms>
+                        <pointsFactorTwoStar>1.2</pointsFactorTwoStar>
+                        <pointsFactorThreeStar>1.5</pointsFactorThreeStar>
+                    </parms>
+                </li>
+                <li Class="QuestNode_SubScript">
+                    <def>Util_AdjustPointsForDistantFight</def>
+                </li>
+                <li Class="QuestNode_GetMap" />
+                <li Class="FCP.Core.RadiantQuests.QuestNode_GetFactionFromList">
+                    <storeAs>askerFaction</storeAs>
+                    <factionDefs>
+                        <li MayRequire="Rick.FCP.Followers">FCP_Faction_Followers</li>
+                    </factionDefs>
+                </li>
+                <li Class="FCP.Core.RadiantQuests.QuestNode_GetLeaderOfFaction">
+                    <storeAs>asker</storeAs>
+                    <factionToUse>$askerFaction</factionToUse>
+                </li>
+                <li Class="QuestNode_GetSiteTile">
+                    <storeAs>siteTile</storeAs>
+                    <preferCloserTiles>true</preferCloserTiles>
+                </li>
+                <li Class="FCP.Core.RadiantQuests.QuestNode_GetSitePartDefsByTagsAndFaction">
+                    <factionToUse>$askerFaction</factionToUse>
+                    <storeAs>sitePartDefs</storeAs>
+                    <storeFactionAs>siteFaction</storeFactionAs>
+                    <sitePartsTags>
+                        <li>
+                            <tag>FCP_Site_Followers_Aid_Camp</tag>
+                        </li>
+                    </sitePartsTags>
+                </li>
+                <li Class="QuestNode_GetDefaultSitePartsParams">
+                    <tile>$siteTile</tile>
+                    <faction>$siteFaction</faction>
+                    <sitePartDefs>$sitePartDefs</sitePartDefs>
+                    <storeSitePartsParamsAs>sitePartsParams</storeSitePartsParamsAs>
+                </li>
+                <li Class="QuestNode_SubScript">
+                    <def>Util_GenerateSite</def>
+                    <parms>
+                        <sitePartsParams>$sitePartsParams</sitePartsParams>
+                        <hiddenSitePartsPossible>true</hiddenSitePartsPossible>
+                    </parms>
+                </li>
+                <li Class="QuestNode_LoopCount">
+                    <loopCount>$(randInt(2,3))</loopCount>
+                    <node Class="QuestNode_GeneratePawn">
+                        <kindDef>FCP_Pawnkind_Followers_Aide</kindDef>
+                        <faction>$askerFaction</faction>
+                        <addToList>aidWorkers</addToList>
+                        <allowAddictions>false</allowAddictions>
+                        <biocodeWeaponChance>1</biocodeWeaponChance>
+                        <biocodeApparelChance>1</biocodeApparelChance>
+                    </node>
+                </li>
+                <li Class="QuestNode_SetAllApparelLocked">
+                    <pawns>$aidWorkers</pawns>
+                </li>
+                <li Class="QuestNode_SpawnWorldObjects">
+                    <worldObjects>$site</worldObjects>
+                    <defsToExcludeFromHyperlinks>Human</defsToExcludeFromHyperlinks>
+                </li>
+                <li Class="QuestNode_Signal">
+                    <inSignal>site.MapGenerated</inSignal>
+                    <node Class="QuestNode_Sequence">
+                        <nodes>
+                            <li Class="FCP.Core.RadiantQuests.QuestNode_SpawnSettlers">
+                                <inSignal>site.MapGenerated</inSignal>
+                                <pawns>$aidWorkers</pawns>
+                                <radius>16</radius>
+                            </li>
+                            <li Class="QuestNode_GetRandomInRangeFloat">
+                                <storeAs>chanceForTrouble</storeAs>
+                                <range>0~1</range>
+                            </li>
+                            <li Class="QuestNode_GreaterOrEqual">
+                                <value1>$chanceForTrouble</value1>
+                                <value2>0.65</value2>
+                                <node Class="QuestNode_Sequence">
+                                    <nodes>
+                                        <li Class="FCP.Core.RadiantQuests.QuestNode_GetFactionFromList">
+                                            <storeAs>enemyFaction</storeAs>
+                                            <factionDefs>
+                                                <li MayRequire="Rick.FCP.Raiders">FCP_Faction_Raider</li>
+                                                <li>PirateWaster</li>
+                                            </factionDefs>
+                                        </li>
+                                        <li Class="QuestNode_Set">
+                                            <name>pointsForRaiders</name>
+                                            <value>$($points * 0.6)</value>
+                                        </li>
+                                        <li Class="FCP.Core.RadiantQuests.QuestNode_GeneratePawns">
+                                            <storeAs>raiders</storeAs>
+                                            <faction>$enemyFaction</faction>
+                                            <pawnGroupKind>Combat</pawnGroupKind>
+                                            <pointsToUse>$pointsForRaiders</pointsToUse>
+                                        </li>
+                                        <li Class="FCP.Core.RadiantQuests.QuestNode_SpawnRaiders">
+                                            <spawnOnEdge>true</spawnOnEdge>
+                                            <pawns>$raiders</pawns>
+                                            <radius>20</radius>
+                                        </li>
+                                        <li Class="QuestNode_Letter">
+                                            <label>Trouble at the camp</label>
+                                            <text>Scavengers have caught the scent of the delivery. The Followers' aides have no way to fight them off.</text>
+                                            <letterDef>ThreatBig</letterDef>
+                                            <lookTargets>$raiders</lookTargets>
+                                            <filterDeadPawnsFromLookTargets>true</filterDeadPawnsFromLookTargets>
+                                        </li>
+                                    </nodes>
+                                </node>
+                            </li>
+                            <li Class="QuestNode_Delay">
+                                <delayTicks>$(randInt(8,14)*60000)</delayTicks>
+                                <isQuestTimeout>true</isQuestTimeout>
+                                <node Class="QuestNode_Sequence">
+                                    <nodes>
+                                        <li Class="QuestNode_AnyPawnAlive">
+                                            <pawns>$aidWorkers</pawns>
+                                            <node Class="QuestNode_Sequence">
+                                                <nodes>
+                                                    <li Class="QuestNode_Letter">
+                                                        <letterDef>PositiveEvent</letterDef>
+                                                        <label>Aid delivered</label>
+                                                        <text>The camp has what it needs, and the aides made it out alive. The Followers are grateful for the escort.</text>
+                                                    </li>
+                                                    <li Class="QuestNode_GiveRewards">
+                                                        <parms>
+                                                            <allowGoodwill>true</allowGoodwill>
+                                                            <allowRoyalFavor>true</allowRoyalFavor>
+                                                            <chosenPawnSignal>ChosenPawnForReward</chosenPawnSignal>
+                                                        </parms>
+                                                        <addCampLootReward>false</addCampLootReward>
+                                                        <customLetterLabel>Thanks from the Followers</customLetterLabel>
+                                                        <customLetterText>The camp is stable, and the Followers send their thanks for keeping the delivery safe.</customLetterText>
+                                                        <nodeIfChosenPawnSignalUsed Class="QuestNode_Letter">
+                                                            <letterDef>ChoosePawn</letterDef>
+                                                            <label TKey="LetterLabelFavorReceiver">[asker_faction_royalFavorLabel]</label>
+                                                            <text TKey="LetterTextFavorReceiver">These colonists participated in the victory for the quest [resolvedQuestName]. [asker_definite] wants to know who should receive the [royalFavorReward_amount] [asker_faction_royalFavorLabel] for this service.</text>
+                                                            <useColonistsOnMap>$site</useColonistsOnMap>
+                                                            <chosenPawnSignal>ChosenPawnForReward</chosenPawnSignal>
+                                                        </nodeIfChosenPawnSignalUsed>
+                                                    </li>
+                                                    <li Class="QuestNode_End">
+                                                        <outcome>Success</outcome>
+                                                    </li>
+                                                </nodes>
+                                            </node>
+                                        </li>
+                                        <li Class="QuestNode_Letter">
+                                            <label>Aid lost</label>
+                                            <letterDef>NegativeEvent</letterDef>
+                                            <text>The aides didn't survive to see the delivery through. The Followers grieve them as family.</text>
+                                        </li>
+                                        <li Class="QuestNode_End">
+                                            <outcome>Fail</outcome>
+                                            <goodwillChangeAmount>-5</goodwillChangeAmount>
+                                            <goodwillChangeFactionOf>$asker</goodwillChangeFactionOf>
+                                        </li>
+                                    </nodes>
+                                </node>
+                            </li>
+                        </nodes>
+                    </node>
+                </li>
+                <li Class="QuestNode_WorldObjectTimeout">
+                    <worldObject>$site</worldObject>
+                    <isQuestTimeout>true</isQuestTimeout>
+                    <delayTicks>$(randInt(10,20)*60000)</delayTicks>
+                    <inSignalDisable>site.MapGenerated</inSignalDisable>
+                    <node Class="QuestNode_Sequence">
+                        <nodes>
+                            <li Class="QuestNode_Letter">
+                                <label>Camp abandoned</label>
+                                <text>Without help in time, the camp scattered or worse. The Followers won't hear from them again.</text>
+                            </li>
+                            <li Class="QuestNode_End">
+                                <outcome>Fail</outcome>
+                                <goodwillChangeAmount>-5</goodwillChangeAmount>
+                                <goodwillChangeFactionOf>$asker</goodwillChangeFactionOf>
+                            </li>
+                        </nodes>
+                    </node>
+                </li>
+                <li Class="QuestNode_Signal">
+                    <inSignal>site.Destroyed</inSignal>
+                    <node Class="QuestNode_Sequence">
+                        <nodes>
+                            <li Class="QuestNode_Letter">
+                                <label>Aid lost</label>
+                                <text>Without help in time, the camp and its aid were lost.</text>
+                            </li>
+                            <li Class="QuestNode_End">
+                                <outcome>Fail</outcome>
+                                <goodwillChangeAmount>-5</goodwillChangeAmount>
+                                <goodwillChangeFactionOf>$asker</goodwillChangeFactionOf>
+                            </li>
+                        </nodes>
+                    </node>
+                </li>
+            </nodes>
+        </root>
+    </QuestScriptDef>
+
+</Defs>

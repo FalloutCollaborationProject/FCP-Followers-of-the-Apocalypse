@@ -27,4 +27,52 @@
         <genStep Class="GenStep_Outpost"/>
     </GenStepDef>
 
+    <!-- Destitute Camp (Aid Delivery) -->
+
+    <SitePartDef>
+        <defName>FCP_Site_Followers_Aid_Camp</defName>
+        <label>destitute camp</label>
+        <description>A camp of wastelanders in need of food and medicine.</description>
+        <workerClass>SitePartWorker_Outpost</workerClass>
+        <siteTexture>World/WorldObjects/DefaultSettlement</siteTexture>
+        <expandingIconTexture>MapIcons/Sites/FCP_Generic_Quest_Site</expandingIconTexture>
+        <forceExitAndRemoveMapCountdownDurationDays>6</forceExitAndRemoveMapCountdownDurationDays>
+        <requiresFaction>true</requiresFaction>
+        <wantsThreatPoints>true</wantsThreatPoints>
+        <tags>
+            <li>FCP_Site_Followers_Aid_Camp</li>
+        </tags>
+    </SitePartDef>
+
+    <GenStepDef>
+        <defName>FCP_Site_Followers_Aid_Camp_Outpost</defName>
+        <linkWithSite>FCP_Site_Followers_Aid_Camp</linkWithSite>
+        <order>450</order>
+        <genStep Class="GenStep_Outpost"/>
+    </GenStepDef>
+
+    <!-- Convalescent Camp -->
+
+    <SitePartDef>
+        <defName>FCP_Site_Followers_Convalescent_Camp</defName>
+        <label>convalescent camp</label>
+        <description>A Followers chapter outpost sheltering the sick and wounded while they recover.</description>
+        <workerClass>SitePartWorker_Outpost</workerClass>
+        <siteTexture>World/WorldObjects/DefaultSettlement</siteTexture>
+        <expandingIconTexture>MapIcons/Sites/FCP_Generic_Quest_Site</expandingIconTexture>
+        <forceExitAndRemoveMapCountdownDurationDays>6</forceExitAndRemoveMapCountdownDurationDays>
+        <requiresFaction>true</requiresFaction>
+        <wantsThreatPoints>true</wantsThreatPoints>
+        <tags>
+            <li>FCP_Site_Followers_Convalescent_Camp</li>
+        </tags>
+    </SitePartDef>
+
+    <GenStepDef>
+        <defName>FCP_Site_Followers_Convalescent_Camp_Outpost</defName>
+        <linkWithSite>FCP_Site_Followers_Convalescent_Camp</linkWithSite>
+        <order>450</order>
+        <genStep Class="GenStep_Outpost"/>
+    </GenStepDef>
+
 </Defs>

@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <QuestScriptDef>
+        <defName>FCP_Quest_Followers_Convalescent_Camp</defName>
+        <rootSelectionWeight>1.0</rootSelectionWeight>
+        <rootMinPoints>15</rootMinPoints>
+        <defaultChallengeRating>1</defaultChallengeRating>
+        <canGiveRoyalFavor>true</canGiveRoyalFavor>
+        <expireDaysRange>5~10</expireDaysRange>
+        <questNameRules>
+            <rulesStrings>
+                <li>questName->Watch Over the Convalescents</li>
+                <li>questName->The Long Recovery</li>
+                <li>questName->Patients in Your Care</li>
+                <li>questName->What Healing Takes</li>
+                <li>questName->The Followers' Wounded</li>
+            </rulesStrings>
+        </questNameRules>
+        <questDescriptionRules>
+            <rulesStrings>
+                <li>questDescription->[asker_nameFull] asks a favor: shelter a group of Followers patients too sick or wounded to travel, and see them through their recovery. It will take [convalescenceDuration_duration]. The Followers will pay well for every day their people stay safe and fed.</li>
+                <li>questDescription->[asker_nameFull]: "We have more patients than beds. If you can keep some of them safe and fed for [convalescenceDuration_duration], we'll make it worth your while - and they might remember your kindness too."</li>
+                <li>questDescription->A chapter overwhelmed with the sick and wounded asks for help. [asker_nameFull] wants outsiders to shelter a handful of patients for [convalescenceDuration_duration] while the Followers' own doctors are stretched thin elsewhere.</li>
+                <li>questDescription->[asker_nameFull] fears some patients won't survive without proper care. [convalescenceDuration_duration] of shelter, food, and medicine is all it should take - if nothing goes wrong.</li>
+            </rulesStrings>
+        </questDescriptionRules>
+        <root Class="QuestNode_Sequence">
+            <nodes>
+                <li Class="QuestNode_SubScript">
+                    <def>Util_RandomizePointsChallengeRating</def>
+                    <parms>
+                        <pointsFactorTwoStar>1.2</pointsFactorTwoStar>
+                        <pointsFactorThreeStar>1.5</pointsFactorThreeStar>
+                    </parms>
+                </li>
+                <li Class="QuestNode_SubScript">
+                    <def>Util_AdjustPointsForDistantFight</def>
+                </li>
+                <li Class="QuestNode_GetMap" />
+                <li Class="FCP.Core.RadiantQuests.QuestNode_GetFactionFromList">
+                    <storeAs>askerFaction</storeAs>
+                    <factionDefs>
+                        <li MayRequire="Rick.FCP.Followers">FCP_Faction_Followers</li>
+                    </factionDefs>
+                </li>
+                <li Class="FCP.Core.RadiantQuests.QuestNode_GetLeaderOfFaction">
+                    <storeAs>asker</storeAs>
+                    <factionToUse>$askerFaction</factionToUse>
+                </li>
+                <li Class="QuestNode_GetRandomInRangeForChallengeRating">
+                    <storeAs>convalescenceDays</storeAs>
+                    <oneStarRange>15~20</oneStarRange>
+                    <twoStarRange>20~28</twoStarRange>
+                    <threeStarRange>28~40</threeStarRange>
+                    <roundRandom>true</roundRandom>
+                </li>
+                <li Class="QuestNode_Set">
+                    <name>convalescenceDuration</name>
+                    <value>$($convalescenceDays * 60000)</value>
+                </li>
+                <li Class="QuestNode_GetSiteTile">
+                    <storeAs>siteTile</storeAs>
+                    <preferCloserTiles>true</preferCloserTiles>
+                </li>
+                <li Class="FCP.Core.RadiantQuests.QuestNode_GetSitePartDefsByTagsAndFaction">
+                    <factionToUse>$askerFaction</factionToUse>
+                    <storeAs>sitePartDefs</storeAs>
+                    <storeFactionAs>siteFaction</storeFactionAs>
+                    <sitePartsTags>
+                        <li>
+                            <tag>FCP_Site_Followers_Convalescent_Camp</tag>
+                        </li>
+                    </sitePartsTags>
+                </li>
+                <li Class="QuestNode_GetDefaultSitePartsParams">
+                    <tile>$siteTile</tile>
+                    <faction>$siteFaction</faction>
+                    <sitePartDefs>$sitePartDefs</sitePartDefs>
+                    <storeSitePartsParamsAs>sitePartsParams</storeSitePartsParamsAs>
+                </li>
+                <li Class="QuestNode_SubScript">
+                    <def>Util_GenerateSite</def>
+                    <parms>
+                        <sitePartsParams>$sitePartsParams</sitePartsParams>
+                        <hiddenSitePartsPossible>true</hiddenSitePartsPossible>
+                    </parms>
+                </li>
+                <li Class="QuestNode_LoopCount">
+                    <loopCount>$(randInt(2,4))</loopCount>
+                    <node Class="QuestNode_GeneratePawn">
+                        <kindDef>FCP_Pawnkind_Followers_Patient</kindDef>
+                        <faction>$askerFaction</faction>
+                        <addToList>patients</addToList>
+                        <allowAddictions>false</allowAddictions>
+                        <biocodeWeaponChance>1</biocodeWeaponChance>
+                        <biocodeApparelChance>1</biocodeApparelChance>
+                    </node>
+                </li>
+                <li Class="QuestNode_SetAllApparelLocked">
+                    <pawns>$patients</pawns>
+                </li>
+                <li Class="QuestNode_SpawnWorldObjects">
+                    <worldObjects>$site</worldObjects>
+                    <defsToExcludeFromHyperlinks>Human</defsToExcludeFromHyperlinks>
+                </li>
+                <li Class="QuestNode_Signal">
+                    <inSignal>site.MapGenerated</inSignal>
+                    <node Class="QuestNode_Sequence">
+                        <nodes>
+                            <li Class="FCP.Core.RadiantQuests.QuestNode_SpawnSettlers">
+                                <inSignal>site.MapGenerated</inSignal>
+                                <pawns>$patients</pawns>
+                                <radius>12</radius>
+                            </li>
+                            <li Class="QuestNode_GetRandomInRangeFloat">
+                                <storeAs>chanceForTrouble</storeAs>
+                                <range>0~1</range>
+                            </li>
+                            <li Class="QuestNode_GreaterOrEqual">
+                                <value1>$chanceForTrouble</value1>
+                                <value2>0.8</value2>
+                                <node Class="QuestNode_Sequence">
+                                    <nodes>
+                                        <li Class="FCP.Core.RadiantQuests.QuestNode_GetFactionFromList">
+                                            <storeAs>enemyFaction</storeAs>
+                                            <factionDefs>
+                                                <li MayRequire="Rick.FCP.Raiders">FCP_Faction_Raider</li>
+                                                <li>PirateWaster</li>
+                                            </factionDefs>
+                                        </li>
+                                        <li Class="QuestNode_Set">
+                                            <name>pointsForRaiders</name>
+                                            <value>$($points * 0.5)</value>
+                                        </li>
+                                        <li Class="FCP.Core.RadiantQuests.QuestNode_GeneratePawns">
+                                            <storeAs>raiders</storeAs>
+                                            <faction>$enemyFaction</faction>
+                                            <pawnGroupKind>Combat</pawnGroupKind>
+                                            <pointsToUse>$pointsForRaiders</pointsToUse>
+                                        </li>
+                                        <li Class="FCP.Core.RadiantQuests.QuestNode_SpawnRaiders">
+                                            <spawnOnEdge>true</spawnOnEdge>
+                                            <pawns>$raiders</pawns>
+                                            <radius>20</radius>
+                                        </li>
+                                        <li Class="QuestNode_Letter">
+                                            <label>The camp is threatened</label>
+                                            <text>Someone has found the convalescent camp. The patients are in no state to defend themselves.</text>
+                                            <letterDef>ThreatBig</letterDef>
+                                            <lookTargets>$raiders</lookTargets>
+                                            <filterDeadPawnsFromLookTargets>true</filterDeadPawnsFromLookTargets>
+                                        </li>
+                                    </nodes>
+                                </node>
+                            </li>
+                            <li Class="QuestNode_Delay">
+                                <delayTicks>$convalescenceDuration</delayTicks>
+                                <isQuestTimeout>true</isQuestTimeout>
+                                <node Class="QuestNode_Sequence">
+                                    <nodes>
+                                        <li Class="QuestNode_AnyPawnAlive">
+                                            <pawns>$patients</pawns>
+                                            <node Class="QuestNode_Sequence">
+                                                <nodes>
+                                                    <li Class="QuestNode_Letter">
+                                                        <letterDef>PositiveEvent</letterDef>
+                                                        <label>Recovery complete</label>
+                                                        <text>The patients have recovered enough to travel home. The Followers won't forget the care you gave them.</text>
+                                                    </li>
+                                                    <li Class="QuestNode_GiveRewards">
+                                                        <parms>
+                                                            <allowGoodwill>true</allowGoodwill>
+                                                            <allowRoyalFavor>true</allowRoyalFavor>
+                                                            <chosenPawnSignal>ChosenPawnForReward</chosenPawnSignal>
+                                                        </parms>
+                                                        <addCampLootReward>false</addCampLootReward>
+                                                        <customLetterLabel>Payment for your care</customLetterLabel>
+                                                        <customLetterText>The Followers send payment for looking after their patients, along with their sincere thanks.</customLetterText>
+                                                        <nodeIfChosenPawnSignalUsed Class="QuestNode_Letter">
+                                                            <letterDef>ChoosePawn</letterDef>
+                                                            <label TKey="LetterLabelFavorReceiver">[asker_faction_royalFavorLabel]</label>
+                                                            <text TKey="LetterTextFavorReceiver">These colonists participated in the victory for the quest [resolvedQuestName]. [asker_definite] wants to know who should receive the [royalFavorReward_amount] [asker_faction_royalFavorLabel] for this service.</text>
+                                                            <useColonistsOnMap>$site</useColonistsOnMap>
+                                                            <chosenPawnSignal>ChosenPawnForReward</chosenPawnSignal>
+                                                        </nodeIfChosenPawnSignalUsed>
+                                                    </li>
+                                                    <li Class="QuestNode_End">
+                                                        <outcome>Success</outcome>
+                                                    </li>
+                                                </nodes>
+                                            </node>
+                                        </li>
+                                        <li Class="QuestNode_Letter">
+                                            <label>Patients lost</label>
+                                            <letterDef>NegativeEvent</letterDef>
+                                            <text>None of the patients survived their stay. The Followers take the loss hard.</text>
+                                        </li>
+                                        <li Class="QuestNode_End">
+                                            <outcome>Fail</outcome>
+                                            <goodwillChangeAmount>-8</goodwillChangeAmount>
+                                            <goodwillChangeFactionOf>$asker</goodwillChangeFactionOf>
+                                        </li>
+                                    </nodes>
+                                </node>
+                            </li>
+                        </nodes>
+                    </node>
+                </li>
+                <li Class="QuestNode_WorldObjectTimeout">
+                    <worldObject>$site</worldObject>
+                    <isQuestTimeout>true</isQuestTimeout>
+                    <delayTicks>$(randInt(10,20)*60000)</delayTicks>
+                    <inSignalDisable>site.MapGenerated</inSignalDisable>
+                    <node Class="QuestNode_Sequence">
+                        <nodes>
+                            <li Class="QuestNode_Letter">
+                                <label>Camp never established</label>
+                                <text>The patients were never taken in. The Followers found care elsewhere.</text>
+                            </li>
+                            <li Class="QuestNode_End">
+                                <outcome>Fail</outcome>
+                                <goodwillChangeAmount>-5</goodwillChangeAmount>
+                                <goodwillChangeFactionOf>$asker</goodwillChangeFactionOf>
+                            </li>
+                        </nodes>
+                    </node>
+                </li>
+                <li Class="QuestNode_Signal">
+                    <inSignal>site.Destroyed</inSignal>
+                    <node Class="QuestNode_Sequence">
+                        <nodes>
+                            <li Class="QuestNode_Letter">
+                                <label>Patients lost</label>
+                                <text>Without shelter in time, the patients were lost.</text>
+                            </li>
+                            <li Class="QuestNode_End">
+                                <outcome>Fail</outcome>
+                                <goodwillChangeAmount>-8</goodwillChangeAmount>
+                                <goodwillChangeFactionOf>$asker</goodwillChangeFactionOf>
+                            </li>
+                        </nodes>
+                    </node>
+                </li>
+            </nodes>
+        </root>
+    </QuestScriptDef>
+
+</Defs>
