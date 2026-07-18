@@ -59,13 +59,13 @@
         <defName>FCP_Character_Followers_Beatrix_Russell</defName>
         <pawnKind>FCP_Unique_Pawnkind_Beatrix_Russell</pawnKind>
         <faction>FCP_Faction_Followers</faction>
-        <xenotype>Baseliner</xenotype>
+        <xenotype MayRequire="Rick.FCP.Ghouls">FCP_Xenotype_Ghoul</xenotype>
         <definitions>
             <li Class="FCP.Core.CharacterStoryDefinition">
                 <firstName>Beatrix</firstName>
                 <lastName>Russell</lastName>
                 <gender>Female</gender>
-                <age>31</age>
+                <age>220</age>
             </li>
             <li Class="FCP.Core.CharacterAppearanceDefinition">
                 <hairColor>(20, 20, 20)</hairColor>
