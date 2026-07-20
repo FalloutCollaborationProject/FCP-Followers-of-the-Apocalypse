@@ -43,31 +43,6 @@
         </backstoryFiltersOverride>
     </PawnKindDef>
 
-    <!-- Arcade Gannon -->
-
-    <PawnKindDef ParentName="FCP_Followers_UniqueCharacterBase">
-        <defName>FCP_Unique_Pawnkind_Arcade_Gannon</defName>
-        <label>Arcade Gannon</label>
-        <combatPower>85</combatPower>
-        <apparelRequired>
-            <li>FCP_Apparel_Lab_Coat_Followers</li>
-        </apparelRequired>
-        <weaponTags>
-            <li>Gun</li>
-            <li MayRequire="Rick.FCP.BallisticWeapons">FCP_Pistol</li>
-        </weaponTags>
-        <backstoryFiltersOverride>
-            <li>
-                <categoriesChildhood>
-                    <li>FCP_Character_Backstory_Gannon_Child</li>
-                </categoriesChildhood>
-                <categoriesAdulthood>
-                    <li>FCP_Backstory_Followers_Arcade_Gannon</li>
-                </categoriesAdulthood>
-            </li>
-        </backstoryFiltersOverride>
-    </PawnKindDef>
-
     <!-- Beatrix Russell -->
 
     <PawnKindDef ParentName="FCP_Followers_UniqueCharacterBase">

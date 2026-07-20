@@ -19,10 +19,11 @@
         </questNameRules>
         <questDescriptionRules>
             <rulesStrings>
-                <li>questDescription->A camp of wastelanders with nothing left has asked the Followers for help. [asker_nameFull] is sending aides with food and medicine, but the camp lies in country the Followers can't promise is safe. Keep the aid workers alive until the camp is back on its feet.</li>
-                <li>questDescription->[asker_nameFull]: "There's a camp not far from here with sick children and no medicine. We're sending what we can. We just need someone to make sure our people get there and back."</li>
-                <li>questDescription->Word reaches [asker_nameFull] of a camp starving and untreated. The Followers won't turn away anyone in need - but their aides carry medicine, not guns.</li>
-                <li>questDescription->[asker_nameFull] asks for help watching over an aid delivery. No one deserves to be turned away for what faction they wear, but the wasteland doesn't always agree.</li>
+                <li>requirements->Requirements: keep at least one aide alive until the delivery ends. If they're all killed, the aid is lost.</li>
+                <li>questDescription->A camp of wastelanders with nothing left has asked the Followers for help. [asker_nameFull] is sending aides with food and medicine, but the camp lies in country the Followers can't promise is safe. Keep the aid workers alive until the camp is back on its feet.\n\n[requirements]</li>
+                <li>questDescription->[asker_nameFull]: "There's a camp not far from here with sick children and no medicine. We're sending what we can. We just need someone to make sure our people get there and back."\n\n[requirements]</li>
+                <li>questDescription->Word reaches [asker_nameFull] of a camp starving and untreated. The Followers won't turn away anyone in need - but their aides carry medicine, not guns.\n\n[requirements]</li>
+                <li>questDescription->[asker_nameFull] asks for help watching over an aid delivery. No one deserves to be turned away for what faction they wear, but the wasteland doesn't always agree.\n\n[requirements]</li>
             </rulesStrings>
         </questDescriptionRules>
         <root Class="QuestNode_Sequence">

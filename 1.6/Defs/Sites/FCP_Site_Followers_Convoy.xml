@@ -75,4 +75,28 @@
         <genStep Class="GenStep_Outpost"/>
     </GenStepDef>
 
+    <!-- Old-World Archive -->
+
+    <SitePartDef>
+        <defName>FCP_Site_Followers_Old_World_Archive</defName>
+        <label>hostile ruin</label>
+        <description>A pre-war medical archive, now held by hostiles.</description>
+        <workerClass>SitePartWorker_Outpost</workerClass>
+        <siteTexture>World/WorldObjects/DefaultSettlement</siteTexture>
+        <expandingIconTexture>MapIcons/Sites/FCP_Generic_Quest_Site</expandingIconTexture>
+        <forceExitAndRemoveMapCountdownDurationDays>6</forceExitAndRemoveMapCountdownDurationDays>
+        <requiresFaction>true</requiresFaction>
+        <wantsThreatPoints>true</wantsThreatPoints>
+        <tags>
+            <li>FCP_Site_Followers_Old_World_Archive</li>
+        </tags>
+    </SitePartDef>
+
+    <GenStepDef>
+        <defName>FCP_Site_Followers_Old_World_Archive_Outpost</defName>
+        <linkWithSite>FCP_Site_Followers_Old_World_Archive</linkWithSite>
+        <order>450</order>
+        <genStep Class="GenStep_Outpost"/>
+    </GenStepDef>
+
 </Defs>

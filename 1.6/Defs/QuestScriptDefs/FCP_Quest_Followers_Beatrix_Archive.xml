@@ -1,30 +1,27 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <QuestScriptDef>
-        <defName>FCP_Quest_Followers_Medical_Convoy</defName>
+    <QuestScriptDef MayRequire="Rick.FCP.Ghouls">
+        <defName>FCP_Quest_Followers_Beatrix_Archive</defName>
         <rootSelectionWeight>1.0</rootSelectionWeight>
-        <rootMinPoints>25</rootMinPoints>
-        <defaultChallengeRating>1</defaultChallengeRating>
+        <rootMinPoints>150</rootMinPoints>
+        <defaultChallengeRating>2</defaultChallengeRating>
         <canGiveRoyalFavor>true</canGiveRoyalFavor>
         <expireDaysRange>5~10</expireDaysRange>
         <questNameRules>
             <rulesStrings>
-                <li>questName->The Convoy Doesn't Fight Back</li>
-                <li>questName->Medicine Under Fire</li>
-                <li>questName->Escort to Nowhere</li>
-                <li>questName->The Followers Ask a Favor</li>
-                <li>questName->Unarmed and Overrun</li>
+                <li>questName->Beatrix's Archive</li>
+                <li>questName->Two Centuries of Notes</li>
+                <li>questName->What the Old World Knew</li>
+                <li>questName->Russell's Last Request</li>
             </rulesStrings>
         </questNameRules>
         <questDescriptionRules>
             <rulesStrings>
-                <li>requirements->Requirements: defeat every hostile pinning down the convoy. If they scatter before you arrive, the convoy is gone with them.</li>
-                <li>questDescription->A Followers medical convoy has been pinned down by hostiles. The Followers carry no weapons worth the name, and [asker_nameFull] is asking outsiders to do what the Followers won't: fight. Clear the hostiles and the convoy's medicine is yours to split as payment.\n\n[requirements]</li>
-                <li>questDescription->[asker_nameFull]: "Our convoy never made it past the ambush. They're pinned down with the wounded and no way to fight back. We don't carry guns. You do. Please."\n\n[requirements]</li>
-                <li>questDescription->Word reaches [asker_nameFull] that a supply convoy has been ambushed short of its destination. The Followers won't take up arms even to save their own, but they'll pay well for someone who will.\n\n[requirements]</li>
-                <li>questDescription->[asker_nameFull] fears the worst for a convoy overdue by two days. If hostiles have it pinned, the unarmed escort won't survive the week. Payment in medicine and goodwill for anyone willing to break the siege.\n\n[requirements]</li>
-                <li>questDescription->A plea from [asker_nameFull]: hostiles have surrounded a Followers convoy carrying medicine meant for a dozen settlements. The Followers can heal what's broken afterward. They can't stop what's happening now.\n\n[requirements]</li>
+                <li>requirements->Requirements: keep Beatrix Russell alive until every hostile at the site is defeated. If she dies, two centuries of medical knowledge dies with her.</li>
+                <li>questDescription->Beatrix Russell has tracked down a pre-war medical archive she read about before the bombs fell. Two hundred years later, she still remembers where to look - she just needs the ruin cleared first.\n\n[requirements]</li>
+                <li>questDescription->Beatrix Russell: "I treated patients out of textbooks that archive holds copies of. Whatever's squatting there now doesn't know what it's sitting on. I intend to go find out anyway."\n\n[requirements]</li>
+                <li>questDescription->[asker_nameFull] worries about letting Beatrix go alone, but she's made up her mind. The old-world archive she remembers could restock every chapter's medicine cabinet for years.\n\n[requirements]</li>
             </rulesStrings>
         </questDescriptionRules>
         <root Class="QuestNode_Sequence">
@@ -50,13 +47,6 @@
                     <storeAs>asker</storeAs>
                     <factionToUse>$askerFaction</factionToUse>
                 </li>
-                <li Class="FCP.Core.RadiantQuests.QuestNode_GetFactionFromList">
-                    <storeAs>enemyFaction</storeAs>
-                    <factionDefs>
-                        <li MayRequire="Rick.FCP.Raiders">FCP_Faction_Raider</li>
-                        <li>PirateWaster</li>
-                    </factionDefs>
-                </li>
                 <li Class="QuestNode_GetSiteTile">
                     <storeAs>siteTile</storeAs>
                     <preferCloserTiles>true</preferCloserTiles>
@@ -66,7 +56,7 @@
                     <storeFactionAs>siteFaction</storeFactionAs>
                     <sitePartsTags>
                         <li>
-                            <tag>FCP_Site_Followers_Convoy</tag>
+                            <tag>FCP_Site_Followers_Old_World_Archive</tag>
                         </li>
                     </sitePartsTags>
                     <mustBeHostileToFactionOf>$asker</mustBeHostileToFactionOf>
@@ -84,69 +74,50 @@
                         <hiddenSitePartsPossible>true</hiddenSitePartsPossible>
                     </parms>
                 </li>
-                <li Class="QuestNode_LoopCount">
-                    <loopCount>$(randInt(2,3))</loopCount>
-                    <node Class="QuestNode_GeneratePawn">
-                        <kindDef>FCP_Pawnkind_Followers_Aide</kindDef>
-                        <faction>$askerFaction</faction>
-                        <addToList>survivors</addToList>
-                        <allowAddictions>false</allowAddictions>
-                        <biocodeWeaponChance>1</biocodeWeaponChance>
-                        <biocodeApparelChance>1</biocodeApparelChance>
-                    </node>
+                <li Class="FCP.Core.RadiantQuests.QuestNode_GenerateUniqueCharacterPawn">
+                    <characterDef>FCP_Character_Followers_Beatrix_Russell</characterDef>
+                    <storeAs>beatrix</storeAs>
+                </li>
+                <li Class="QuestNode_Set">
+                    <name>escorts</name>
+                    <value>$beatrix</value>
                 </li>
                 <li Class="QuestNode_SetAllApparelLocked">
-                    <pawns>$survivors</pawns>
+                    <pawns>$escorts</pawns>
+                </li>
+                <li Class="QuestNode_JoinPlayer">
+                    <pawns>$escorts</pawns>
+                    <joinPlayer>true</joinPlayer>
+                </li>
+                <li Class="QuestNode_ExtraFaction">
+                    <factionOf>$asker</factionOf>
+                    <pawns>$escorts</pawns>
+                    <factionType>HomeFaction</factionType>
+                    <inSignalsRemovePawn>
+                        <li>escorts.RanWild</li>
+                    </inSignalsRemovePawn>
+                </li>
+                <li Class="FCP.Core.RadiantQuests.QuestNode_SpawnPawns">
+                    <inSignal>site.MapGenerated</inSignal>
+                    <pawns>$escorts</pawns>
+                    <mapParent>$site</mapParent>
+                </li>
+                <li Class="QuestNode_LeaveOnCleanup">
+                    <pawns>$escorts</pawns>
+                    <sendStandardLetter>false</sendStandardLetter>
                 </li>
                 <li Class="QuestNode_SpawnWorldObjects">
                     <worldObjects>$site</worldObjects>
                     <defsToExcludeFromHyperlinks>Human</defsToExcludeFromHyperlinks>
                 </li>
-                <li Class="QuestNode_Signal">
-                    <inSignal>site.MapGenerated</inSignal>
-                    <node Class="QuestNode_Sequence">
-                        <nodes>
-                            <li Class="FCP.Core.RadiantQuests.QuestNode_SpawnSettlers">
-                                <inSignal>site.MapGenerated</inSignal>
-                                <pawns>$survivors</pawns>
-                                <radius>16</radius>
-                            </li>
-                            <li Class="QuestNode_Set">
-                                <name>pointsForRaiders</name>
-                                <value>$points</value>
-                            </li>
-                            <li Class="FCP.Core.RadiantQuests.QuestNode_GeneratePawns">
-                                <storeAs>raiders</storeAs>
-                                <faction>$enemyFaction</faction>
-                                <pawnGroupKind>Combat</pawnGroupKind>
-                                <pointsToUse>$pointsForRaiders</pointsToUse>
-                            </li>
-                            <li Class="FCP.Core.RadiantQuests.QuestNode_SpawnRaiders">
-                                <inSignal>site.MapGenerated</inSignal>
-                                <spawnOnEdge>false</spawnOnEdge>
-                                <pawns>$raiders</pawns>
-                                <radius>20</radius>
-                            </li>
-                        </nodes>
-                    </node>
-                </li>
                 <li Class="QuestNode_WorldObjectTimeout">
                     <worldObject>$site</worldObject>
                     <isQuestTimeout>true</isQuestTimeout>
-                    <delayTicks>$(randInt(10,20)*60000)</delayTicks>
+                    <delayTicks>$(randInt(15,30)*60000)</delayTicks>
                     <inSignalDisable>site.MapGenerated</inSignalDisable>
-                    <node Class="QuestNode_Sequence">
-                        <nodes>
-                            <li Class="QuestNode_Letter">
-                                <label>Convoy lost</label>
-                                <text>The convoy went silent before help arrived. The Followers mourn quietly, as they always do.</text>
-                            </li>
-                            <li Class="QuestNode_End">
-                                <outcome>Fail</outcome>
-                                <goodwillChangeAmount>-5</goodwillChangeAmount>
-                                <goodwillChangeFactionOf>$asker</goodwillChangeFactionOf>
-                            </li>
-                        </nodes>
+                    <node Class="QuestNode_End">
+                        <outcome>Fail</outcome>
+                        <sendStandardLetter>true</sendStandardLetter>
                     </node>
                 </li>
                 <li Class="QuestNode_Signal">
@@ -154,13 +125,16 @@
                     <node Class="QuestNode_Sequence">
                         <nodes>
                             <li Class="QuestNode_AnyPawnAlive">
-                                <pawns>$survivors</pawns>
+                                <pawns>$escorts</pawns>
                                 <node Class="QuestNode_Sequence">
                                     <nodes>
                                         <li Class="QuestNode_Letter">
                                             <letterDef>PositiveEvent</letterDef>
-                                            <label>Convoy saved</label>
-                                            <text>The hostiles are dead and the convoy survives. The Followers won't forget this.</text>
+                                            <label>Archive recovered</label>
+                                            <text>Beatrix finds exactly what she remembered - and more besides. The Followers will be restocked for years.</text>
+                                        </li>
+                                        <li Class="QuestNode_Notify_PlayerRaidedSomeone">
+                                            <getRaidersFromMapParent>$site</getRaidersFromMapParent>
                                         </li>
                                         <li Class="QuestNode_GiveRewards">
                                             <parms>
@@ -169,8 +143,8 @@
                                                 <chosenPawnSignal>ChosenPawnForReward</chosenPawnSignal>
                                             </parms>
                                             <addCampLootReward>true</addCampLootReward>
-                                            <customLetterLabel>Payment arrived</customLetterLabel>
-                                            <customLetterText>Medicine and thanks from the Followers, delivered as promised.</customLetterText>
+                                            <customLetterLabel>Payment from the Followers</customLetterLabel>
+                                            <customLetterText>The Followers send payment for seeing Beatrix home safely.</customLetterText>
                                             <nodeIfChosenPawnSignalUsed Class="QuestNode_Letter">
                                                 <letterDef>ChoosePawn</letterDef>
                                                 <label TKey="LetterLabelFavorReceiver">[asker_faction_royalFavorLabel]</label>
@@ -186,13 +160,13 @@
                                 </node>
                             </li>
                             <li Class="QuestNode_Letter">
-                                <label>Too late</label>
                                 <letterDef>NegativeEvent</letterDef>
-                                <text>The hostiles are dead, but the convoy's aides didn't make it. The Followers grieve them as family.</text>
+                                <label>Beatrix is gone</label>
+                                <text>Beatrix Russell didn't survive the ruin. Two hundred years of memory are lost with her, and the Followers grieve her as family.</text>
                             </li>
                             <li Class="QuestNode_End">
                                 <outcome>Fail</outcome>
-                                <goodwillChangeAmount>-5</goodwillChangeAmount>
+                                <goodwillChangeAmount>-10</goodwillChangeAmount>
                                 <goodwillChangeFactionOf>$asker</goodwillChangeFactionOf>
                             </li>
                         </nodes>
@@ -203,8 +177,8 @@
                     <node Class="QuestNode_Sequence">
                         <nodes>
                             <li Class="QuestNode_Letter">
-                                <label>Convoy lost</label>
-                                <text>Without help in time, the convoy was overrun.</text>
+                                <label>Archive lost</label>
+                                <text>Without help in time, the ruin was left uncleared and the archive stays lost.</text>
                             </li>
                             <li Class="QuestNode_End">
                                 <outcome>Fail</outcome>

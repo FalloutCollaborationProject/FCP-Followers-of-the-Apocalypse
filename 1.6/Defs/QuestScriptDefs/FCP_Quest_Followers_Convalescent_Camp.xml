@@ -19,10 +19,11 @@
         </questNameRules>
         <questDescriptionRules>
             <rulesStrings>
-                <li>questDescription->[asker_nameFull] asks a favor: shelter a group of Followers patients too sick or wounded to travel, and see them through their recovery. It will take [convalescenceDuration_duration]. The Followers will pay well for every day their people stay safe and fed.</li>
-                <li>questDescription->[asker_nameFull]: "We have more patients than beds. If you can keep some of them safe and fed for [convalescenceDuration_duration], we'll make it worth your while - and they might remember your kindness too."</li>
-                <li>questDescription->A chapter overwhelmed with the sick and wounded asks for help. [asker_nameFull] wants outsiders to shelter a handful of patients for [convalescenceDuration_duration] while the Followers' own doctors are stretched thin elsewhere.</li>
-                <li>questDescription->[asker_nameFull] fears some patients won't survive without proper care. [convalescenceDuration_duration] of shelter, food, and medicine is all it should take - if nothing goes wrong.</li>
+                <li>requirements->Requirements: keep the patients housed, fed, and treated for [convalescenceDuration_duration]. If they die or go without care, the Followers won't forget it.</li>
+                <li>questDescription->[asker_nameFull] asks a favor: shelter a group of Followers patients too sick or wounded to travel, and see them through their recovery. It will take [convalescenceDuration_duration]. The Followers will pay well for every day their people stay safe and fed.\n\n[requirements]</li>
+                <li>questDescription->[asker_nameFull]: "We have more patients than beds. If you can keep some of them safe and fed for [convalescenceDuration_duration], we'll make it worth your while - and they might remember your kindness too."\n\n[requirements]</li>
+                <li>questDescription->A chapter overwhelmed with the sick and wounded asks for help. [asker_nameFull] wants outsiders to shelter a handful of patients for [convalescenceDuration_duration] while the Followers' own doctors are stretched thin elsewhere.\n\n[requirements]</li>
+                <li>questDescription->[asker_nameFull] fears some patients won't survive without proper care. [convalescenceDuration_duration] of shelter, food, and medicine is all it should take - if nothing goes wrong.\n\n[requirements]</li>
             </rulesStrings>
         </questDescriptionRules>
         <root Class="QuestNode_Sequence">

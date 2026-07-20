@@ -168,6 +168,16 @@
                     <FCP_Pawnkind_Followers_Guard>3</FCP_Pawnkind_Followers_Guard>
                     <FCP_Pawnkind_Followers_Aide>4</FCP_Pawnkind_Followers_Aide>
                 </guards>
+                <characterDefs>
+                    <li>FCP_Character_Followers_Arcade_Gannon</li>
+                </characterDefs>
+                <characterTraderKinds>
+                    <li>
+                        <key>FCP_Character_Followers_Arcade_Gannon</key>
+                        <value>FCP_Trader_Followers_Aid_Caravan</value>
+                    </li>
+                </characterTraderKinds>
+                <characterChance>0.3</characterChance>
             </li>
 
             <!-- Chapter Leadership -->

@@ -34,28 +34,6 @@
     </FCP.Core.CharacterDef>
 
     <FCP.Core.CharacterDef>
-        <defName>FCP_Character_Followers_Arcade_Gannon</defName>
-        <pawnKind>FCP_Unique_Pawnkind_Arcade_Gannon</pawnKind>
-        <faction>FCP_Faction_Followers</faction>
-        <xenotype>Baseliner</xenotype>
-        <definitions>
-            <li Class="FCP.Core.CharacterStoryDefinition">
-                <firstName>Arcade</firstName>
-                <lastName>Gannon</lastName>
-                <gender>Male</gender>
-                <age>35</age>
-            </li>
-            <li Class="FCP.Core.CharacterAppearanceDefinition">
-                <hairColor>(55, 45, 35)</hairColor>
-                <hairDef>Bob</hairDef>
-                <beardDef>NoBeard</beardDef>
-                <headTypeDef>Male_AverageNormal</headTypeDef>
-                <bodyTypeDef>Thin</bodyTypeDef>
-            </li>
-        </definitions>
-    </FCP.Core.CharacterDef>
-
-    <FCP.Core.CharacterDef>
         <defName>FCP_Character_Followers_Beatrix_Russell</defName>
         <pawnKind>FCP_Unique_Pawnkind_Beatrix_Russell</pawnKind>
         <faction>FCP_Faction_Followers</faction>
