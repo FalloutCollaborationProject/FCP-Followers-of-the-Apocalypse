@@ -143,10 +143,6 @@
                     <FCP_Pawnkind_Followers_Doctor>8</FCP_Pawnkind_Followers_Doctor>
                     <FCP_Pawnkind_Followers_Guard>4</FCP_Pawnkind_Followers_Guard>
                 </options>
-                <characterDefs>
-                    <li>FCP_Character_Followers_Arcade_Gannon</li>
-                </characterDefs>
-                <characterChance>0.20</characterChance>
             </li>
 
             <!-- Aid Caravan -->
@@ -168,16 +164,6 @@
                     <FCP_Pawnkind_Followers_Guard>3</FCP_Pawnkind_Followers_Guard>
                     <FCP_Pawnkind_Followers_Aide>4</FCP_Pawnkind_Followers_Aide>
                 </guards>
-                <characterDefs>
-                    <li>FCP_Character_Followers_Arcade_Gannon</li>
-                </characterDefs>
-                <characterTraderKinds>
-                    <li>
-                        <key>FCP_Character_Followers_Arcade_Gannon</key>
-                        <value>FCP_Trader_Followers_Aid_Caravan</value>
-                    </li>
-                </characterTraderKinds>
-                <characterChance>0.3</characterChance>
             </li>
 
             <!-- Chapter Leadership -->
@@ -192,7 +178,6 @@
                 </options>
                 <characterDefs>
                     <li>FCP_Character_Followers_Julie_Farkas</li>
-                    <li>FCP_Character_Followers_Arcade_Gannon</li>
                     <li>FCP_Character_Followers_Beatrix_Russell</li>
                 </characterDefs>
                 <characterChance>0.25</characterChance>
