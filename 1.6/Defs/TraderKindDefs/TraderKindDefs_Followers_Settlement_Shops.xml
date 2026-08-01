@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+    <!--__________ Followers Named Settlement Traders __________-->
+    <!--__ The Followers do not deal in weapons or armor - medicine, food, and aid only __-->
+
+    <!--_____ Old Mormon Fort _____-->
+
+    <!--___ Farkas' Clinic ___-->
+
+    <TraderKindDef>
+        <defName>FCP_Trader_OldMormonFort_FarkasClinic</defName>
+        <label>Farkas' Clinic</label>
+        <stockGenerators>
+
+            <!-- Currency -->
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>Silver</thingDef>
+                <countRange>700~1600</countRange>
+            </li>
+
+            <!-- Medicine (Julie is the Followers' regional administrator) -->
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>MedicineHerbal</thingDef>
+                <countRange>15~35</countRange>
+            </li>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>MedicineIndustrial</thingDef>
+                <countRange>30~65</countRange>
+            </li>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>MedicineUltratech</thingDef>
+                <countRange>4~10</countRange>
+            </li>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>Neutroamine</thingDef>
+                <countRange>15~35</countRange>
+            </li>
+
+            <!-- Chems (Medical) -->
+            <li Class="StockGenerator_MultiDef" MayRequire="Rick.FCP.Chems">
+                <thingDefs>
+                    <li>FCP_Chem_Stimpak</li>
+                    <li>FCP_Chem_MedX</li>
+                    <li>FCP_Chem_Radaway</li>
+                    <li>FCP_Chem_RadX</li>
+                </thingDefs>
+                <countRange>15~35</countRange>
+            </li>
+            <li Class="StockGenerator_MultiDef" MayRequire="Rick.FCP.Chems">
+                <thingDefs>
+                    <li>FCP_Chem_Diluted_Stimpak</li>
+                    <li>FCP_Chem_Ultra_Stimpak</li>
+                    <li>FCP_Chem_Auto_Stimpak</li>
+                    <li>FCP_Chem_Doctors_Bag</li>
+                    <li>FCP_Chem_Blood_Pack</li>
+                </thingDefs>
+                <countRange>15~35</countRange>
+            </li>
+            <li Class="StockGenerator_SingleDef" MayRequire="Rick.FCP.Chems,Rick.FCP.Plants">
+                <thingDef>FCP_Chem_Healing_Powder</thingDef>
+                <countRange>15~35</countRange>
+            </li>
+
+            <!-- Lab Coat -->
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>FCP_Apparel_Lab_Coat_Followers</thingDef>
+                <countRange>1~3</countRange>
+            </li>
+
+            <!-- Buying: no weapons or armor -->
+            <li Class="StockGenerator_Category">
+                <categoryDef>Medicine</categoryDef>
+            </li>
+            <li Class="StockGenerator_BuyTradeTag">
+                <tag>Drugs</tag>
+            </li>
+
+        </stockGenerators>
+    </TraderKindDef>
+
+    <!--___ Fort Infirmary Supply ___-->
+
+    <TraderKindDef>
+        <defName>FCP_Trader_OldMormonFort_InfirmarySupply</defName>
+        <label>Fort Infirmary Supply</label>
+        <stockGenerators>
+
+            <!-- Currency -->
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>Silver</thingDef>
+                <countRange>400~1000</countRange>
+            </li>
+
+            <!-- Resources -->
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>Cloth</thingDef>
+                <countRange>60~150</countRange>
+            </li>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>Steel</thingDef>
+                <countRange>80~200</countRange>
+            </li>
+
+            <!-- Food Aid -->
+            <li Class="StockGenerator_Category">
+                <categoryDef>Foods</categoryDef>
+                <thingDefCountRange>3~5</thingDefCountRange>
+                <totalPriceRange>250~600</totalPriceRange>
+            </li>
+
+            <!-- Pre-War Food -->
+            <li Class="StockGenerator_MultiDef" MayRequire="Rick.FCP.PreWarFood">
+                <thingDefs>
+                    <li>FCP_Food_Cram</li>
+                    <li>FCP_Food_Insta_Mash</li>
+                    <li>FCP_Food_Pork_N_Beans</li>
+                    <li>FCP_Food_Potato_Crisps</li>
+                    <li>FCP_Food_Canned_Dog_Food</li>
+                    <li>FCP_Food_Potted_Meat</li>
+                    <li>FCP_Food_Yum_Yum_Deviled_Eggs</li>
+                </thingDefs>
+                <countRange>10~25</countRange>
+            </li>
+
+            <!-- Donated Clothing -->
+            <li Class="StockGenerator_MarketValue">
+                <tradeTag>BasicClothing</tradeTag>
+                <countRange>3~6</countRange>
+            </li>
+
+            <!-- Buying: no weapons or armor -->
+            <li Class="StockGenerator_Category">
+                <categoryDef>Foods</categoryDef>
+            </li>
+            <li Class="StockGenerator_Category">
+                <categoryDef>Textiles</categoryDef>
+            </li>
+
+        </stockGenerators>
+    </TraderKindDef>
+
+    <!--_____ Angel's Boneyard Medical University _____-->
+
+    <!--___ Russell's Ward ___-->
+
+    <TraderKindDef>
+        <defName>FCP_Trader_AngelsBoneyard_RussellsWard</defName>
+        <label>Russell's Ward</label>
+        <stockGenerators>
+
+            <!-- Currency -->
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>Silver</thingDef>
+                <countRange>600~1400</countRange>
+            </li>
+
+            <!-- Medicine (Angel's Boneyard Medical University trains Followers doctors and offers implant surgery) -->
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>MedicineIndustrial</thingDef>
+                <countRange>25~55</countRange>
+            </li>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>MedicineUltratech</thingDef>
+                <countRange>6~15</countRange>
+            </li>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>Neutroamine</thingDef>
+                <countRange>15~35</countRange>
+            </li>
+
+            <!-- Chems (Medical) -->
+            <li Class="StockGenerator_MultiDef" MayRequire="Rick.FCP.Chems">
+                <thingDefs>
+                    <li>FCP_Chem_Stimpak</li>
+                    <li>FCP_Chem_MedX</li>
+                    <li>FCP_Chem_Hydra</li>
+                    <li>FCP_Chem_Healing_Powder</li>
+                </thingDefs>
+                <countRange>15~35</countRange>
+            </li>
+            <li Class="StockGenerator_MultiDef" MayRequire="Rick.FCP.Chems">
+                <thingDefs>
+                    <li>FCP_Chem_Diluted_Stimpak</li>
+                    <li>FCP_Chem_Ultra_Stimpak</li>
+                    <li>FCP_Chem_RadX</li>
+                    <li>FCP_Chem_Radaway</li>
+                    <li>FCP_Chem_Doctors_Bag</li>
+                    <li>FCP_Chem_Blood_Pack</li>
+                </thingDefs>
+                <countRange>15~35</countRange>
+            </li>
+
+            <!-- Lab Coat -->
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>FCP_Apparel_Lab_Coat_Followers</thingDef>
+                <countRange>1~3</countRange>
+            </li>
+
+            <!-- Buying: no weapons or armor -->
+            <li Class="StockGenerator_Category">
+                <categoryDef>Medicine</categoryDef>
+            </li>
+            <li Class="StockGenerator_BuyTradeTag">
+                <tag>Drugs</tag>
+            </li>
+
+        </stockGenerators>
+    </TraderKindDef>
+
+    <!--___ Boneyard Archive ___-->
+
+    <TraderKindDef>
+        <defName>FCP_Trader_AngelsBoneyard_Archive</defName>
+        <label>Boneyard Archive</label>
+        <stockGenerators>
+
+            <!-- Currency -->
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>Silver</thingDef>
+                <countRange>500~1200</countRange>
+            </li>
+
+            <!-- Resources -->
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>ComponentIndustrial</thingDef>
+                <countRange>10~30</countRange>
+            </li>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>Steel</thingDef>
+                <countRange>80~200</countRange>
+            </li>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>Cloth</thingDef>
+                <countRange>60~150</countRange>
+            </li>
+
+            <!-- Manufactured Goods -->
+            <li Class="StockGenerator_Category">
+                <categoryDef>Manufactured</categoryDef>
+                <thingDefCountRange>2~4</thingDefCountRange>
+                <totalPriceRange>300~700</totalPriceRange>
+            </li>
+
+            <!-- Food Aid -->
+            <li Class="StockGenerator_Category">
+                <categoryDef>Foods</categoryDef>
+                <thingDefCountRange>2~4</thingDefCountRange>
+                <totalPriceRange>200~500</totalPriceRange>
+            </li>
+
+            <!-- Buying: no weapons or armor -->
+            <li Class="StockGenerator_Category">
+                <categoryDef>Manufactured</categoryDef>
+            </li>
+            <li Class="StockGenerator_Category">
+                <categoryDef>ResourcesRaw</categoryDef>
+            </li>
+            <li Class="StockGenerator_BuyTradeTag">
+                <tag>Art</tag>
+            </li>
+
+        </stockGenerators>
+    </TraderKindDef>
+
+</Defs>

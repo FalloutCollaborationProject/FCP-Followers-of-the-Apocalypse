@@ -201,6 +201,44 @@
                     </li>
                 </roleOverrides>
             </li>
+            <!-- Named settlements -->
+            <li Class="FCP.Factions.FactionExtension_SettlementControl">
+                <maxSettlements>2</maxSettlements>
+                <namedSettlements>
+                    <li>
+                        <name>Old Mormon Fort</name>
+                        <guaranteedCharacters>
+                            <li>FCP_Character_Followers_Julie_Farkas</li>
+                        </guaranteedCharacters>
+                        <traders>
+                            <li>
+                                <traderName>Farkas' Clinic</traderName>
+                                <traderKind>FCP_Trader_OldMormonFort_FarkasClinic</traderKind>
+                            </li>
+                            <li>
+                                <traderName>Fort Infirmary Supply</traderName>
+                                <traderKind>FCP_Trader_OldMormonFort_InfirmarySupply</traderKind>
+                            </li>
+                        </traders>
+                    </li>
+                    <li>
+                        <name>Angel's Boneyard Medical University</name>
+                        <guaranteedCharacters>
+                            <li>FCP_Character_Followers_Beatrix_Russell</li>
+                        </guaranteedCharacters>
+                        <traders>
+                            <li>
+                                <traderName>Russell's Ward</traderName>
+                                <traderKind>FCP_Trader_AngelsBoneyard_RussellsWard</traderKind>
+                            </li>
+                            <li>
+                                <traderName>Boneyard Archive</traderName>
+                                <traderKind>FCP_Trader_AngelsBoneyard_Archive</traderKind>
+                            </li>
+                        </traders>
+                    </li>
+                </namedSettlements>
+            </li>
         </modExtensions>
     </FactionDef>
 
