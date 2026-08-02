@@ -203,7 +203,7 @@
             </li>
             <!-- Named settlements -->
             <li Class="FCP.Factions.FactionExtension_SettlementControl">
-                <maxSettlements>2</maxSettlements>
+                <maxSettlements>3</maxSettlements>
                 <namedSettlements>
                     <li>
                         <name>Old Mormon Fort</name>
@@ -234,6 +234,16 @@
                             <li>
                                 <traderName>Boneyard Archive</traderName>
                                 <traderKind>FCP_Trader_AngelsBoneyard_Archive</traderKind>
+                            </li>
+                        </traders>
+                    </li>
+                    <!-- Adytum -->
+                    <li>
+                        <name>Adytum</name>
+                        <traders>
+                            <li>
+                                <traderName>Adytum Ration Depot</traderName>
+                                <traderKind>FCP_Trader_Adytum_RationDepot</traderKind>
                             </li>
                         </traders>
                     </li>

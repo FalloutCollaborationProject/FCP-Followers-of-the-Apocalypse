@@ -263,4 +263,67 @@
         </stockGenerators>
     </TraderKindDef>
 
+    <!--_____ Adytum _____-->
+
+    <!--___ Adytum Ration Depot ___-->
+
+    <TraderKindDef>
+        <defName>FCP_Trader_Adytum_RationDepot</defName>
+        <label>Adytum Ration Depot</label>
+        <stockGenerators>
+
+            <!-- Currency -->
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>Silver</thingDef>
+                <countRange>500~1200</countRange>
+            </li>
+
+            <!-- Medicine (a fortified slum outpost sheltering the vulnerable) -->
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>MedicineHerbal</thingDef>
+                <countRange>10~25</countRange>
+            </li>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>MedicineIndustrial</thingDef>
+                <countRange>20~45</countRange>
+            </li>
+            <li Class="StockGenerator_SingleDef">
+                <thingDef>Neutroamine</thingDef>
+                <countRange>10~25</countRange>
+            </li>
+
+            <!-- Chems (Medical) -->
+            <li Class="StockGenerator_MultiDef" MayRequire="Rick.FCP.Chems">
+                <thingDefs>
+                    <li>FCP_Chem_Stimpak</li>
+                    <li>FCP_Chem_Radaway</li>
+                    <li>FCP_Chem_Healing_Powder</li>
+                </thingDefs>
+                <countRange>15~35</countRange>
+            </li>
+
+            <!-- Food Aid -->
+            <li Class="StockGenerator_Category">
+                <categoryDef>Foods</categoryDef>
+                <thingDefCountRange>3~5</thingDefCountRange>
+                <totalPriceRange>250~600</totalPriceRange>
+            </li>
+
+            <!-- Donated Clothing -->
+            <li Class="StockGenerator_MarketValue">
+                <tradeTag>BasicClothing</tradeTag>
+                <countRange>3~6</countRange>
+            </li>
+
+            <!-- Buying: no weapons or armor -->
+            <li Class="StockGenerator_Category">
+                <categoryDef>Medicine</categoryDef>
+            </li>
+            <li Class="StockGenerator_Category">
+                <categoryDef>Foods</categoryDef>
+            </li>
+
+        </stockGenerators>
+    </TraderKindDef>
+
 </Defs>
