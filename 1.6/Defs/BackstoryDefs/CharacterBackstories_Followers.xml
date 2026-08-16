@@ -110,4 +110,45 @@
         </skillGains>
     </BackstoryDef>
 
+    <!--__________ Dr. Usanagi __________-->
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Followers_Doctor_Usanagi_Child</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <title>medical prodigy</title>
+        <titleShort>prodigy</titleShort>
+        <baseDesc>[PAWN_nameDef] showed exceptional aptitude for medicine from a young age, learning from doctors in the Followers of the Apocalypse.</baseDesc>
+        <slot>Childhood</slot>
+        <spawnCategories>
+            <li>FCP_Character_Backstory_Usanagi_Child</li>
+        </spawnCategories>
+        <skillGains>
+            <Medicine>6</Medicine>
+            <Intellectual>3</Intellectual>
+        </skillGains>
+    </BackstoryDef>
+
+    <BackstoryDef>
+        <defName>FCP_Backstory_Followers_Doctor_Usanagi_Adult</defName>
+        <bodyTypeMale>Male</bodyTypeMale>
+        <bodyTypeFemale>Female</bodyTypeFemale>
+        <title>New Vegas doctor</title>
+        <titleShort>doctor</titleShort>
+        <baseDesc>[PAWN_nameDef] runs the New Vegas Medical Clinic, one of the most advanced medical facilities in the Mojave. [PAWN_pronoun] offers high-quality medical services including cybernetic implants to those who can afford them.</baseDesc>
+        <slot>Adulthood</slot>
+        <spawnCategories>
+            <li>FCP_Backstory_Followers_Doctor_Usanagi</li>
+        </spawnCategories>
+        <skillGains>
+            <Medicine>12</Medicine>
+            <Intellectual>8</Intellectual>
+            <Crafting>4</Crafting>
+        </skillGains>
+        <workDisables>
+            <li>ManualDumb</li>
+            <li>Violent</li>
+        </workDisables>
+    </BackstoryDef>
+
 </Defs>

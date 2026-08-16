@@ -149,4 +149,37 @@
         </roleApparelRequirements>
     </PreceptDef>
 
+    <!-- Physician Role -->
+
+    <PreceptDef ParentName="PreceptRoleMultiBase">
+        <defName>FCP_IdeoRole_Followers_Physician</defName>
+        <label>Physician</label>
+        <description>Physicians are trusted with the chapter's hardest medical cases, treating anyone who comes through the door regardless of who they used to answer to.</description>
+        <iconPath>UI/Memes/OldWorldIdealism</iconPath>
+        <roleRequirements>
+            <li Class="RoleRequirement_MinSkillAny">
+                <skills>
+                    <Medicine>13</Medicine>
+                </skills>
+            </li>
+        </roleRequirements>
+        <roleRequiredWorkTags>
+            <li>Caring</li>
+        </roleRequiredWorkTags>
+        <requiredMemes>
+            <li>FCP_Meme_Followers_Compassion</li>
+        </requiredMemes>
+        <roleEffects>
+            <li Class="RoleEffect_PawnStatOffset">
+                <statDef>MedicalTendQualityOffset</statDef>
+                <modifier>0.08</modifier>
+            </li>
+            <li Class="RoleEffect_PawnStatOffset">
+                <statDef>SocialImpact</statDef>
+                <modifier>0.08</modifier>
+            </li>
+        </roleEffects>
+        <displayOrderInImpact>2</displayOrderInImpact>
+    </PreceptDef>
+
 </Defs>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <FCP.Ranks.RankTrackDef>
+        <defName>FCP_RankTrack_Followers</defName>
+        <label>Followers Standing</label>
+        <iconPath>World_Icon/FCP_Followers_World_Icon</iconPath>
+        <rootTier>FCP_Rank_Followers_Volunteer</rootTier>
+        <owningFaction>FCP_Faction_Followers</owningFaction>
+        <collectiveNoun>the chapter</collectiveNoun>
+        <drillLabel>Defense Training...</drillLabel>
+        <drillDesc>Practice defensive drills with any colonist. Both stop, stand apart, and draw their weapons for the session. Both gain skill XP. Once per day.</drillDesc>
+        <studyLabel>Teaching Rounds...</studyLabel>
+        <studyDesc>Make rounds with another colonist on the medical path, teaching as you go. Both gain skill XP. Once per day.</studyDesc>
+        <inspectLabel>Chart Review...</inspectLabel>
+        <inspectDesc>Review a lower-ranked guard's weapon and gear condition. Well-kept gear earns thanks, neglected gear earns a quiet word.</inspectDesc>
+        <punishLabel>Extra Clinic Shifts...</punishLabel>
+        <punishDesc>Assign a lower-ranked guard a stretch of extra clinic shifts for a lapse in conduct, souring their mood. Once per day per colonist.</punishDesc>
+        <rallyLabel>All Hands</rallyLabel>
+        <rallyDesc>Rouse every guard among {0} on this map with a burst of speed and steady nerves, for when the wounded need protecting. Once every few days.</rallyDesc>
+        <fallInLabel>Muster the Guard</fallInLabel>
+        <fallInDesc>Call {0} to muster behind you, up to four deep, interrupting whatever they're doing. They hold until stood down.</fallInDesc>
+        <dismissLabel>Stand Down</dismissLabel>
+        <dismissDesc>Stand {0} down, letting them return to their duties.</dismissDesc>
+    </FCP.Ranks.RankTrackDef>
+
+</Defs>

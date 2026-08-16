@@ -69,4 +69,28 @@
         </backstoryFiltersOverride>
     </PawnKindDef>
 
+    <!-- Dr. Usanagi -->
+
+    <PawnKindDef ParentName="FCP_Followers_UniqueCharacterBase">
+        <defName>FCP_Unique_Pawnkind_Doctor_Usanagi</defName>
+        <label>Dr. Usanagi</label>
+        <combatPower>50</combatPower>
+        <apparelRequired>
+            <li>FCP_Apparel_Lab_Coat_Followers</li>
+        </apparelRequired>
+        <apparelMoney>0</apparelMoney>
+        <weaponMoney>0</weaponMoney>
+        <requiredWorkTags/>
+        <backstoryFiltersOverride>
+            <li>
+                <categoriesChildhood>
+                    <li>FCP_Character_Backstory_Usanagi_Child</li>
+                </categoriesChildhood>
+                <categoriesAdulthood>
+                    <li>FCP_Backstory_Followers_Doctor_Usanagi</li>
+                </categoriesAdulthood>
+            </li>
+        </backstoryFiltersOverride>
+    </PawnKindDef>
+
 </Defs>

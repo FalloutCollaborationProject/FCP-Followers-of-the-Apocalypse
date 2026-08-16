@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<!--__________ Expedition Return Flavor Text __________-->
+
+	<!-- Novice -->
+
+	<FCP_Rank_Expedition_Followers_Novice_1>{PAWN} delivered a satchel of medicine to a settlement that had run dry, and made it back before dark.</FCP_Rank_Expedition_Followers_Novice_1>
+	<FCP_Rank_Expedition_Followers_Novice_2>{PAWN} treated a handful of minor wounds on the road and turned down payment for it.</FCP_Rank_Expedition_Followers_Novice_2>
+	<FCP_Rank_Expedition_Followers_Novice_3>{PAWN} spent the trip teaching a settlement's own healer a few things worth knowing.</FCP_Rank_Expedition_Followers_Novice_3>
+	<FCP_Rank_Expedition_Followers_Novice_4>{PAWN} talked a nervous settlement into letting the chapter set up a supply route.</FCP_Rank_Expedition_Followers_Novice_4>
+
+	<!-- Veteran -->
+
+	<FCP_Rank_Expedition_Followers_Veteran_1>{PAWN} got a settlement's outbreak under control before it could spread any further.</FCP_Rank_Expedition_Followers_Veteran_1>
+	<FCP_Rank_Expedition_Followers_Veteran_2>{PAWN} spent the trip treating the wounded from a raid, working through the night more than once.</FCP_Rank_Expedition_Followers_Veteran_2>
+	<FCP_Rank_Expedition_Followers_Veteran_3>{PAWN} came back with a full case of records worth adding to the chapter archive.</FCP_Rank_Expedition_Followers_Veteran_3>
+	<FCP_Rank_Expedition_Followers_Veteran_4>{PAWN} talked a hostile checkpoint down without a shot fired, medicine in hand the whole way.</FCP_Rank_Expedition_Followers_Veteran_4>
+
+	<!-- Elite -->
+
+	<FCP_Rank_Expedition_Followers_Elite_1>{PAWN} went in alone where a full convoy would have drawn too much attention, and came back with everyone alive.</FCP_Rank_Expedition_Followers_Elite_1>
+	<FCP_Rank_Expedition_Followers_Elite_2>{PAWN} ran the quarantine exactly to protocol, in, treat, out, no one else exposed.</FCP_Rank_Expedition_Followers_Elite_2>
+	<FCP_Rank_Expedition_Followers_Elite_3>{PAWN} spent the better part of two weeks off the charter's known routes and came back with knowledge worth the risk.</FCP_Rank_Expedition_Followers_Elite_3>
+	<FCP_Rank_Expedition_Followers_Elite_4>{PAWN} didn't say much about what was out there, just filed the report and asked what's needed next.</FCP_Rank_Expedition_Followers_Elite_4>
+
+	<!-- Sentinel -->
+
+	<FCP_Rank_Expedition_Followers_Sentinel_1>{PAWN} pushed past any ground the chapter has ever charted, scouting for the next place that needs help.</FCP_Rank_Expedition_Followers_Sentinel_1>
+	<FCP_Rank_Expedition_Followers_Sentinel_2>{PAWN} came back from unclaimed territory with word of a settlement ready to host a chapter of its own.</FCP_Rank_Expedition_Followers_Sentinel_2>
+	<FCP_Rank_Expedition_Followers_Sentinel_3>{PAWN} spent nearly two weeks beyond contact and returned with news the administrator will want to hear directly.</FCP_Rank_Expedition_Followers_Sentinel_3>
+	<FCP_Rank_Expedition_Followers_Sentinel_4>{PAWN} walked back through the chapter doors carrying proof of what was found at the edge of the map, worn through but every patient still breathing.</FCP_Rank_Expedition_Followers_Sentinel_4>
+
+</LanguageData>

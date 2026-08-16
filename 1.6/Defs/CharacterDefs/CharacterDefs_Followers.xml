@@ -14,6 +14,10 @@
             </li>
         </roles>
         <definitions>
+            <!-- Rank -->
+            <li Class="FCP.Core.CharacterRankDefinition">
+                <tier>FCP_Rank_Followers_Administrator</tier>
+            </li>
             <li Class="FCP.Core.CharacterStoryDefinition">
                 <firstName>Julie</firstName>
                 <lastName>Farkas</lastName>
@@ -39,6 +43,10 @@
         <faction>FCP_Faction_Followers</faction>
         <xenotype MayRequire="Rick.FCP.Ghouls">FCP_Xenotype_Ghoul</xenotype>
         <definitions>
+            <!-- Rank -->
+            <li Class="FCP.Core.CharacterRankDefinition">
+                <tier>FCP_Rank_Followers_SeniorGuard</tier>
+            </li>
             <li Class="FCP.Core.CharacterStoryDefinition">
                 <firstName>Beatrix</firstName>
                 <lastName>Russell</lastName>
@@ -51,6 +59,34 @@
                 <beardDef>NoBeard</beardDef>
                 <headTypeDef>Female_AverageNormal</headTypeDef>
                 <bodyTypeDef>Female</bodyTypeDef>
+            </li>
+        </definitions>
+    </FCP.Core.CharacterDef>
+
+    <!--__________ New Vegas Medical Clinic, Freeside (Fallout: New Vegas) __________-->
+
+    <FCP.Core.CharacterDef>
+        <defName>FCP_Character_Followers_Doctor_Usanagi</defName>
+        <pawnKind>FCP_Unique_Pawnkind_Doctor_Usanagi</pawnKind>
+        <faction>FCP_Faction_Followers</faction>
+        <xenotype>Baseliner</xenotype>
+        <definitions>
+            <li Class="FCP.Core.CharacterStoryDefinition">
+                <firstName>Usanagi</firstName>
+                <lastName></lastName>
+                <gender>Female</gender>
+                <age>42</age>
+            </li>
+            <li Class="FCP.Core.CharacterAppearanceDefinition">
+                <hairColor>(20, 15, 10)</hairColor>
+                <hairDef>FCP_Hair_Prim_N_Proper</hairDef>
+                <beardDef>NoBeard</beardDef>
+                <skinColorOverride>(235, 215, 195)</skinColorOverride>
+                <headTypeDef>Female_AverageNormal</headTypeDef>
+                <bodyTypeDef>Female</bodyTypeDef>
+            </li>
+            <li Class="FCP.Core.CharacterUniqueItemDefinition">
+                <uniqueItem>FCP_Apparel_Lab_Coat_Followers</uniqueItem>
             </li>
         </definitions>
     </FCP.Core.CharacterDef>

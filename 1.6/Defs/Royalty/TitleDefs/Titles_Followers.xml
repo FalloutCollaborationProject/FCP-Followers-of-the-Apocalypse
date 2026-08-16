@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--__________ Followers of the Apocalypse Titles __________-->
+
+    <!-- Volunteer -->
+
+    <RoyalTitleDef ParentName="FCP_Base_Empire_Titles">
+        <defName>FCP_Title_Followers_Volunteer</defName>
+        <label>volunteer</label>
+        <description>New to the chapter, taken in and put to work wherever an extra pair of hands is needed.</description>
+        <tags>
+            <li>FCP_Title_Followers</li>
+        </tags>
+        <seniority>0</seniority>
+        <favorCost>1</favorCost>
+        <changeHeirQuestPoints>1000</changeHeirQuestPoints>
+        <allowDignifiedMeditationFocus>False</allowDignifiedMeditationFocus>
+        <awardWorkerClass>RoyalTitleAwardWorker_Instant</awardWorkerClass>
+        <permitPointsAwarded>1</permitPointsAwarded>
+    </RoyalTitleDef>
+
+    <!-- Aide -->
+
+    <RoyalTitleDef ParentName="FCP_Base_Empire_Titles">
+        <defName>FCP_Title_Followers_Aide</defName>
+        <label>aide</label>
+        <description>Volunteers trusted to work the wards and the archive both. Most stay on the medical path; a few take up a rifle instead.</description>
+        <tags>
+            <li>FCP_Title_Followers</li>
+        </tags>
+        <seniority>150</seniority>
+        <favorCost>4</favorCost>
+        <changeHeirQuestPoints>1000</changeHeirQuestPoints>
+        <allowDignifiedMeditationFocus>False</allowDignifiedMeditationFocus>
+        <awardWorkerClass>RoyalTitleAwardWorker_Instant</awardWorkerClass>
+        <permitPointsAwarded>1</permitPointsAwarded>
+    </RoyalTitleDef>
+
+    <!-- Field Medic -->
+
+    <RoyalTitleDef ParentName="FCP_Base_Empire_Titles">
+        <defName>FCP_Title_Followers_FieldMedic</defName>
+        <label>field medic</label>
+        <description>Trusted to treat the wounded wherever they're found, chapter roof or open wasteland.</description>
+        <tags>
+            <li>FCP_Title_Followers</li>
+        </tags>
+        <seniority>300</seniority>
+        <favorCost>8</favorCost>
+        <changeHeirQuestPoints>1000</changeHeirQuestPoints>
+        <commonality>1</commonality>
+        <allowDignifiedMeditationFocus>True</allowDignifiedMeditationFocus>
+        <awardWorkerClass>RoyalTitleAwardWorker_Instant</awardWorkerClass>
+        <requiredApparel>
+            <li>
+                <bodyPartGroupsMatchAny>
+                    <li>Torso</li>
+                </bodyPartGroupsMatchAny>
+                <requiredTags>
+                    <li>FCP_Followers_Apparel</li>
+                </requiredTags>
+            </li>
+        </requiredApparel>
+        <permitPointsAwarded>2</permitPointsAwarded>
+    </RoyalTitleDef>
+
+    <!-- Physician -->
+
+    <RoyalTitleDef ParentName="FCP_Base_Empire_Titles">
+        <defName>FCP_Title_Followers_Physician</defName>
+        <label>physician</label>
+        <description>A full doctor of the chapter, trusted with the hardest cases and the training of every medic under them.</description>
+        <tags>
+            <li>FCP_Title_Followers</li>
+        </tags>
+        <seniority>600</seniority>
+        <favorCost>10</favorCost>
+        <changeHeirQuestPoints>1500</changeHeirQuestPoints>
+        <commonality>1</commonality>
+        <allowDignifiedMeditationFocus>True</allowDignifiedMeditationFocus>
+        <awardWorkerClass>RoyalTitleAwardWorker_Instant</awardWorkerClass>
+        <requiredApparel>
+            <li>
+                <bodyPartGroupsMatchAny>
+                    <li>Torso</li>
+                </bodyPartGroupsMatchAny>
+                <requiredTags>
+                    <li>FCP_Followers_Apparel</li>
+                </requiredTags>
+            </li>
+        </requiredApparel>
+        <permitPointsAwarded>3</permitPointsAwarded>
+    </RoyalTitleDef>
+
+    <!-- Chief Physician -->
+
+    <RoyalTitleDef ParentName="FCP_Base_Empire_Titles">
+        <defName>FCP_Title_Followers_ChiefPhysician</defName>
+        <label>chief physician</label>
+        <description>Runs every ward and archive shelf the chapter has, answering only to the administrator.</description>
+        <tags>
+            <li>FCP_Title_Followers</li>
+        </tags>
+        <seniority>900</seniority>
+        <favorCost>12</favorCost>
+        <changeHeirQuestPoints>2000</changeHeirQuestPoints>
+        <commonality>1</commonality>
+        <allowDignifiedMeditationFocus>True</allowDignifiedMeditationFocus>
+        <awardWorkerClass>RoyalTitleAwardWorker_Instant</awardWorkerClass>
+        <requiredApparel>
+            <li>
+                <bodyPartGroupsMatchAny>
+                    <li>Torso</li>
+                </bodyPartGroupsMatchAny>
+                <requiredTags>
+                    <li>FCP_Followers_Apparel</li>
+                </requiredTags>
+            </li>
+        </requiredApparel>
+        <permitPointsAwarded>4</permitPointsAwarded>
+    </RoyalTitleDef>
+
+    <!-- Guard -->
+
+    <RoyalTitleDef ParentName="FCP_Base_Empire_Titles">
+        <defName>FCP_Title_Followers_Guard</defName>
+        <label>guard</label>
+        <description>Stands watch so the wards don't have to. A small, reluctant duty, but a necessary one.</description>
+        <tags>
+            <li>FCP_Title_Followers</li>
+        </tags>
+        <seniority>300</seniority>
+        <favorCost>8</favorCost>
+        <changeHeirQuestPoints>1000</changeHeirQuestPoints>
+        <commonality>1</commonality>
+        <allowDignifiedMeditationFocus>True</allowDignifiedMeditationFocus>
+        <awardWorkerClass>RoyalTitleAwardWorker_Instant</awardWorkerClass>
+        <permitPointsAwarded>2</permitPointsAwarded>
+    </RoyalTitleDef>
+
+    <!-- Senior Guard -->
+
+    <RoyalTitleDef ParentName="FCP_Base_Empire_Titles">
+        <defName>FCP_Title_Followers_SeniorGuard</defName>
+        <label>senior guard</label>
+        <description>Trusted to run the chapter's whole watch, small as it is.</description>
+        <tags>
+            <li>FCP_Title_Followers</li>
+        </tags>
+        <seniority>600</seniority>
+        <favorCost>10</favorCost>
+        <changeHeirQuestPoints>1500</changeHeirQuestPoints>
+        <commonality>1</commonality>
+        <allowDignifiedMeditationFocus>True</allowDignifiedMeditationFocus>
+        <awardWorkerClass>RoyalTitleAwardWorker_Instant</awardWorkerClass>
+        <permitPointsAwarded>3</permitPointsAwarded>
+    </RoyalTitleDef>
+
+    <!-- Administrator -->
+
+    <RoyalTitleDef ParentName="FCP_Base_Empire_Titles">
+        <defName>FCP_Title_Followers_Administrator</defName>
+        <label>administrator</label>
+        <description>Runs the chapter, answering to no higher authority than their own conscience and the Followers' founding charter.</description>
+        <tags>
+            <li>FCP_Title_Followers</li>
+        </tags>
+        <seniority>1200</seniority>
+        <favorCost>15</favorCost>
+        <changeHeirQuestPoints>3000</changeHeirQuestPoints>
+        <commonality>1</commonality>
+        <allowDignifiedMeditationFocus>True</allowDignifiedMeditationFocus>
+        <awardWorkerClass>RoyalTitleAwardWorker_Instant</awardWorkerClass>
+        <requiredApparel>
+            <li>
+                <bodyPartGroupsMatchAny>
+                    <li>Torso</li>
+                </bodyPartGroupsMatchAny>
+                <requiredTags>
+                    <li>FCP_Followers_Apparel</li>
+                </requiredTags>
+            </li>
+        </requiredApparel>
+        <permitPointsAwarded>5</permitPointsAwarded>
+    </RoyalTitleDef>
+
+</Defs>

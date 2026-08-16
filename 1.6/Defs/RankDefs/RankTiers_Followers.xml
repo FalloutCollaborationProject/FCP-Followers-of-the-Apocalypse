@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--__________ Followers of the Apocalypse Ranks __________-->
+
+    <!--_____ Trunk _____-->
+
+    <FCP.Ranks.RankTierDef>
+        <defName>FCP_Rank_Followers_Volunteer</defName>
+        <label>volunteer</label>
+        <description>New to the chapter, taken in and put to work wherever an extra pair of hands is needed.</description>
+        <correspondingRoyalTitle MayRequire="Ludeon.RimWorld.Royalty">FCP_Title_Followers_Volunteer</correspondingRoyalTitle>
+        <nextTierOptions>
+            <li>FCP_Rank_Followers_Aide</li>
+        </nextTierOptions>
+    </FCP.Ranks.RankTierDef>
+
+    <FCP.Ranks.RankTierDef>
+        <defName>FCP_Rank_Followers_Aide</defName>
+        <label>aide</label>
+        <description>Volunteers trusted to work the wards and the archive both. Most stay on the medical path; a few take up a rifle instead.</description>
+        <minDaysInRank>3</minDaysInRank>
+        <correspondingRoyalTitle MayRequire="Ludeon.RimWorld.Royalty">FCP_Title_Followers_Aide</correspondingRoyalTitle>
+        <nextTierOptions>
+            <li>FCP_Rank_Followers_FieldMedic</li>
+            <li>FCP_Rank_Followers_Guard</li>
+        </nextTierOptions>
+    </FCP.Ranks.RankTierDef>
+
+    <!--_____ Path of Medicine _____-->
+
+    <FCP.Ranks.RankTierDef>
+        <defName>FCP_Rank_Followers_FieldMedic</defName>
+        <label>field medic</label>
+        <description>Trusted to treat the wounded wherever they're found, chapter roof or open wasteland.</description>
+        <pathName>Path of Medicine</pathName>
+        <minDaysInRank>9</minDaysInRank>
+        <skillRequirements>
+            <Medicine>9</Medicine>
+        </skillRequirements>
+        <grantHediff>FCP_Hediff_Followers_Rank_FieldMedic</grantHediff>
+        <trainingXpPerHour>
+            <Intellectual>500</Intellectual>
+            <Social>200</Social>
+        </trainingXpPerHour>
+        <expedition>FCP_Expedition_Followers_Novice</expedition>
+        <discipline>Scholarly</discipline>
+        <correspondingRoyalTitle MayRequire="Ludeon.RimWorld.Royalty">FCP_Title_Followers_FieldMedic</correspondingRoyalTitle>
+        <nextTierOptions>
+            <li>FCP_Rank_Followers_Physician</li>
+        </nextTierOptions>
+    </FCP.Ranks.RankTierDef>
+
+    <FCP.Ranks.RankTierDef>
+        <defName>FCP_Rank_Followers_Physician</defName>
+        <label>physician</label>
+        <description>A full doctor of the chapter, trusted with the hardest cases and the training of every medic under them.</description>
+        <minDaysInRank>13</minDaysInRank>
+        <skillRequirements>
+            <Medicine>13</Medicine>
+            <Social>5</Social>
+        </skillRequirements>
+        <minSquiresTrained>1</minSquiresTrained>
+        <grantHediff>FCP_Hediff_Followers_Rank_Physician</grantHediff>
+        <trainingXpPerHour>
+            <Intellectual>650</Intellectual>
+            <Social>350</Social>
+        </trainingXpPerHour>
+        <expedition>FCP_Expedition_Followers_Veteran</expedition>
+        <discipline>Scholarly</discipline>
+        <correspondingRoyalTitle MayRequire="Ludeon.RimWorld.Royalty">FCP_Title_Followers_Physician</correspondingRoyalTitle>
+        <correspondingIdeoRole MayRequire="Ludeon.RimWorld.Ideology">FCP_IdeoRole_Followers_Physician</correspondingIdeoRole>
+        <nextTierOptions>
+            <li>FCP_Rank_Followers_ChiefPhysician</li>
+        </nextTierOptions>
+    </FCP.Ranks.RankTierDef>
+
+    <FCP.Ranks.RankTierDef>
+        <defName>FCP_Rank_Followers_ChiefPhysician</defName>
+        <label>chief physician</label>
+        <description>Runs every ward and archive shelf the chapter has, answering only to the administrator.</description>
+        <minDaysInRank>21</minDaysInRank>
+        <skillRequirements>
+            <Medicine>18</Medicine>
+            <Social>9</Social>
+        </skillRequirements>
+        <minSquiresTrained>2</minSquiresTrained>
+        <minMissionsCompleted>2</minMissionsCompleted>
+        <grantHediff>FCP_Hediff_Followers_Rank_ChiefPhysician</grantHediff>
+        <trainingXpPerHour>
+            <Intellectual>800</Intellectual>
+            <Social>500</Social>
+        </trainingXpPerHour>
+        <expedition>FCP_Expedition_Followers_Elite</expedition>
+        <discipline>Scholarly</discipline>
+        <correspondingRoyalTitle MayRequire="Ludeon.RimWorld.Royalty">FCP_Title_Followers_ChiefPhysician</correspondingRoyalTitle>
+        <nextTierOptions>
+            <li>FCP_Rank_Followers_Administrator</li>
+        </nextTierOptions>
+    </FCP.Ranks.RankTierDef>
+
+    <!--_____ Path of the Guard _____-->
+
+    <FCP.Ranks.RankTierDef>
+        <defName>FCP_Rank_Followers_Guard</defName>
+        <label>guard</label>
+        <description>Stands watch so the wards don't have to. A small, reluctant duty, but a necessary one.</description>
+        <pathName>Path of the Guard</pathName>
+        <minDaysInRank>9</minDaysInRank>
+        <skillRequirements>
+            <Shooting>7</Shooting>
+        </skillRequirements>
+        <grantHediff>FCP_Hediff_Followers_Rank_Guard</grantHediff>
+        <trainingXpPerHour>
+            <Shooting>600</Shooting>
+        </trainingXpPerHour>
+        <expedition>FCP_Expedition_Followers_Novice</expedition>
+        <discipline>Combat</discipline>
+        <correspondingRoyalTitle MayRequire="Ludeon.RimWorld.Royalty">FCP_Title_Followers_Guard</correspondingRoyalTitle>
+        <nextTierOptions>
+            <li>FCP_Rank_Followers_SeniorGuard</li>
+        </nextTierOptions>
+    </FCP.Ranks.RankTierDef>
+
+    <FCP.Ranks.RankTierDef>
+        <defName>FCP_Rank_Followers_SeniorGuard</defName>
+        <label>senior guard</label>
+        <description>Trusted to run the chapter's whole watch, small as it is.</description>
+        <minDaysInRank>17</minDaysInRank>
+        <skillRequirements>
+            <Shooting>12</Shooting>
+            <Social>5</Social>
+        </skillRequirements>
+        <minMissionsCompleted>1</minMissionsCompleted>
+        <grantHediff>FCP_Hediff_Followers_Rank_SeniorGuard</grantHediff>
+        <trainingXpPerHour>
+            <Shooting>800</Shooting>
+        </trainingXpPerHour>
+        <expedition>FCP_Expedition_Followers_Veteran</expedition>
+        <discipline>Combat</discipline>
+        <correspondingRoyalTitle MayRequire="Ludeon.RimWorld.Royalty">FCP_Title_Followers_SeniorGuard</correspondingRoyalTitle>
+        <nextTierOptions>
+            <li>FCP_Rank_Followers_Administrator</li>
+        </nextTierOptions>
+    </FCP.Ranks.RankTierDef>
+
+    <!--_____ Summit _____-->
+
+    <FCP.Ranks.RankTierDef>
+        <defName>FCP_Rank_Followers_Administrator</defName>
+        <label>administrator</label>
+        <description>Runs the chapter, answering to no higher authority than their own conscience and the Followers' founding charter.</description>
+        <minDaysInRank>26</minDaysInRank>
+        <skillRequirements>
+            <Social>15</Social>
+        </skillRequirements>
+        <minMissionsCompleted>3</minMissionsCompleted>
+        <grantHediff>FCP_Hediff_Followers_Rank_Administrator</grantHediff>
+        <trainingXpPerHour>
+            <Intellectual>500</Intellectual>
+            <Social>500</Social>
+        </trainingXpPerHour>
+        <expedition>FCP_Expedition_Followers_Sentinel</expedition>
+        <correspondingRoyalTitle MayRequire="Ludeon.RimWorld.Royalty">FCP_Title_Followers_Administrator</correspondingRoyalTitle>
+        <correspondingIdeoRole MayRequire="Ludeon.RimWorld.Ideology">FCP_IdeoRole_Followers_Administrator</correspondingIdeoRole>
+        <isCommanderTier>true</isCommanderTier>
+        <auraRadius>16</auraRadius>
+        <auraHediff>FCP_Hediff_Followers_Administrator_Presence</auraHediff>
+        <rallyHediff>FCP_Hediff_Followers_Administrator_Rally</rallyHediff>
+        <rallyCooldownDays>2</rallyCooldownDays>
+    </FCP.Ranks.RankTierDef>
+
+</Defs>

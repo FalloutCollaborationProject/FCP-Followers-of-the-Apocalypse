@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--__________ Followers of the Apocalypse Rank Expeditions __________-->
+
+    <!-- Loot -->
+
+    <ThingSetMakerDef>
+        <defName>FCP_FollowersExpeditionLootMaker</defName>
+        <root Class="ThingSetMaker_MarketValue">
+            <fixedParams>
+                <filter>
+                    <thingDefs>
+                        <li>FCP_Currency_Caps</li>
+                        <li>MedicineIndustrial</li>
+                        <li>MedicineHerbal</li>
+                        <li>Neutroamine</li>
+                    </thingDefs>
+                </filter>
+            </fixedParams>
+        </root>
+    </ThingSetMakerDef>
+
+    <!-- Novice -->
+
+    <FCP.Ranks.RankExpeditionDef>
+        <defName>FCP_Expedition_Followers_Novice</defName>
+        <label>aid run</label>
+        <description>A short trip to deliver medicine to a settlement that can't come to the chapter itself.</description>
+        <durationDays>3~5</durationDays>
+        <xpReward>
+            <Intellectual>200</Intellectual>
+        </xpReward>
+        <lootMaker>FCP_FollowersExpeditionLootMaker</lootMaker>
+        <lootMarketValueRange>50~150</lootMarketValueRange>
+        <siteRevealChance>0.15</siteRevealChance>
+        <failureChance>0.12</failureChance>
+        <returnFlavorKeys>
+            <li>FCP_Rank_Expedition_Followers_Novice_1</li>
+            <li>FCP_Rank_Expedition_Followers_Novice_2</li>
+            <li>FCP_Rank_Expedition_Followers_Novice_3</li>
+            <li>FCP_Rank_Expedition_Followers_Novice_4</li>
+        </returnFlavorKeys>
+    </FCP.Ranks.RankExpeditionDef>
+
+    <!-- Veteran -->
+
+    <FCP.Ranks.RankExpeditionDef>
+        <defName>FCP_Expedition_Followers_Veteran</defName>
+        <label>convalescent detail</label>
+        <description>A tasked trip to set up care for a settlement caught in the middle of an outbreak or a raid's aftermath.</description>
+        <durationDays>6~8</durationDays>
+        <xpReward>
+            <Intellectual>400</Intellectual>
+            <Social>150</Social>
+        </xpReward>
+        <lootMaker>FCP_FollowersExpeditionLootMaker</lootMaker>
+        <lootMarketValueRange>150~350</lootMarketValueRange>
+        <siteRevealChance>0.25</siteRevealChance>
+        <failureChance>0.1</failureChance>
+        <returnFlavorKeys>
+            <li>FCP_Rank_Expedition_Followers_Veteran_1</li>
+            <li>FCP_Rank_Expedition_Followers_Veteran_2</li>
+            <li>FCP_Rank_Expedition_Followers_Veteran_3</li>
+            <li>FCP_Rank_Expedition_Followers_Veteran_4</li>
+        </returnFlavorKeys>
+    </FCP.Ranks.RankExpeditionDef>
+
+    <!-- Elite -->
+
+    <FCP.Ranks.RankExpeditionDef>
+        <defName>FCP_Expedition_Followers_Elite</defName>
+        <label>quarantine run</label>
+        <description>A solo trip into ground too dangerous for a full aid convoy, the kind only a chief physician or senior guard is trusted to make alone.</description>
+        <durationDays>8~10</durationDays>
+        <xpReward>
+            <Intellectual>600</Intellectual>
+            <Social>200</Social>
+        </xpReward>
+        <lootMaker>FCP_FollowersExpeditionLootMaker</lootMaker>
+        <lootMarketValueRange>300~600</lootMarketValueRange>
+        <siteRevealChance>0.35</siteRevealChance>
+        <failureChance>0.08</failureChance>
+        <returnFlavorKeys>
+            <li>FCP_Rank_Expedition_Followers_Elite_1</li>
+            <li>FCP_Rank_Expedition_Followers_Elite_2</li>
+            <li>FCP_Rank_Expedition_Followers_Elite_3</li>
+            <li>FCP_Rank_Expedition_Followers_Elite_4</li>
+        </returnFlavorKeys>
+    </FCP.Ranks.RankExpeditionDef>
+
+    <!-- Sentinel -->
+
+    <FCP.Ranks.RankExpeditionDef>
+        <defName>FCP_Expedition_Followers_Sentinel</defName>
+        <label>the administrator's charter run</label>
+        <description>A long-range mission carried out under the administrator's own charter, the kind that decides whether a stretch of wasteland gets a chapter of its own.</description>
+        <durationDays>10~14</durationDays>
+        <xpReward>
+            <Intellectual>800</Intellectual>
+            <Social>250</Social>
+        </xpReward>
+        <lootMaker>FCP_FollowersExpeditionLootMaker</lootMaker>
+        <lootMarketValueRange>500~900</lootMarketValueRange>
+        <siteRevealChance>0.5</siteRevealChance>
+        <failureChance>0.05</failureChance>
+        <returnFlavorKeys>
+            <li>FCP_Rank_Expedition_Followers_Sentinel_1</li>
+            <li>FCP_Rank_Expedition_Followers_Sentinel_2</li>
+            <li>FCP_Rank_Expedition_Followers_Sentinel_3</li>
+            <li>FCP_Rank_Expedition_Followers_Sentinel_4</li>
+        </returnFlavorKeys>
+    </FCP.Ranks.RankExpeditionDef>
+
+</Defs>

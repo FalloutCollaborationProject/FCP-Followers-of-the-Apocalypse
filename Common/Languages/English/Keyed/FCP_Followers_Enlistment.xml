@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<!--__________ Enlistments with Factions Letter Text __________-->
+
+	<!--_____ Followers of the Apocalypse _____-->
+
+	<!-- Enlistment Options -->
+
+	<FCP_Followers_Enlist_Letter_Title>You have joined the Followers of the Apocalypse.</FCP_Followers_Enlist_Letter_Title>
+	<FCP_Followers_Enlist_Letter_Label>Welcome to the chapter. There's always more wounded than hands to treat them, so pull your weight and you'll always have a bed, a meal, and a wage waiting for you at any chapter you find.</FCP_Followers_Enlist_Letter_Label>
+	<FCP_Followers_Enlist_Button_Label>Join the Followers of the Apocalypse.</FCP_Followers_Enlist_Button_Label>
+	<FCP_Followers_Enlist_Button_Desc>Sign on with the Followers.</FCP_Followers_Enlist_Button_Desc>
+	<FCP_Followers_Enlist_Requrements_Not_Satisfied>You need to have minimum of 10 goodwill, currently you have only {0} goodwill.</FCP_Followers_Enlist_Requrements_Not_Satisfied>
+	<FCP_Followers_Enlisted_With_Key>Enlisted with: The Followers of the Apocalypse</FCP_Followers_Enlisted_With_Key>
+
+	<!-- Mission Options -->
+
+	<FCP_Followers_Missions_Label>Aid Missions</FCP_Followers_Missions_Label>
+	<FCP_Followers_Missions_Desc>Aid mission descriptions</FCP_Followers_Missions_Desc>
+	<FCP_Followers_Menu_Missions_Desc>An administrator asks whether you'd be willing to help with a chapter's aid work.</FCP_Followers_Menu_Missions_Desc>
+	<FCP_Followers_Menu_Missions_Select_Quest>Select an Aid Mission: </FCP_Followers_Menu_Missions_Select_Quest>
+	<FCP_Followers_Menu_Missions_Start_Quest>Accept Aid Mission</FCP_Followers_Menu_Missions_Start_Quest>
+	<FCP_Followers_Menu_Missions_Collect_Bounty>Collect Reward</FCP_Followers_Menu_Missions_Collect_Bounty>
+	<FCP_Followers_Not_Enough_Money>Not enough caps</FCP_Followers_Not_Enough_Money>
+
+	<!-- Salary Options -->
+
+	<FCP_Followers_Salary_Label>Stipend</FCP_Followers_Salary_Label>
+	<FCP_Followers_Salary_Desc>You are entitled to collect your stipend from this faction every 14 days. It isn't much - the chapter spends what it has on medicine, not wages.</FCP_Followers_Salary_Desc>
+
+	<!-- Provision Options -->
+
+	<FCP_Followers_Provisions_Label>Provisions</FCP_Followers_Provisions_Label>
+	<FCP_Followers_Provisions_Desc>Provisions will arrive via your caravan inventory every 10 days:\n\n- Industrial medicine\n- Survival meals</FCP_Followers_Provisions_Desc>
+
+	<!-- Storage Options -->
+
+	<FCP_Followers_Storage_Label>Storage</FCP_Followers_Storage_Label>
+	<FCP_Followers_Storage_Desc>Store items from your caravan to your faction stash. Faction stashes transfer across all of the faction's chapters and will save contents even if you are no longer enlisted.</FCP_Followers_Storage_Desc>
+
+	<!-- Work Options -->
+
+	<FCP_Followers_Clinic_Duty_Label>Clinic Duty</FCP_Followers_Clinic_Duty_Label>
+	<FCP_Followers_Clinic_Duty_Desc>Work the chapter clinic. This service tends to all of your team with industrial medicine. Immunity gain is also increased while your team is under care.</FCP_Followers_Clinic_Duty_Desc>
+	<FCP_Followers_Archive_Duty_Label>Archive Duty</FCP_Followers_Archive_Duty_Label>
+	<FCP_Followers_Archive_Duty_Desc>Study and teach in the chapter archive with hourly experience gain on the following skills:\n\n- Intellectual, Social\n\nHourly experience gain stops when this faction is resting at night.</FCP_Followers_Archive_Duty_Desc>
+	<FCP_Followers_Aid_Rounds_Label>Aid Rounds</FCP_Followers_Aid_Rounds_Label>
+	<FCP_Followers_Aid_Rounds_Desc>Walk the wards and make rounds for $6 an hour.</FCP_Followers_Aid_Rounds_Desc>
+
+	<!-- Resign Options -->
+
+	<FCP_Followers_Resign_Menu_Text>You will resign from the Followers of the Apocalypse effective immediately. (-25 in relations)</FCP_Followers_Resign_Menu_Text>
+	<FCP_Followers_Resign_Letter_Title>Resigned</FCP_Followers_Resign_Letter_Title>
+	<FCP_Followers_Resign_Letter_Label>Resign</FCP_Followers_Resign_Letter_Label>
+	<FCP_Followers_Resign_Button_Label>You have successfully resigned from the Followers of the Apocalypse. (-25 relations)</FCP_Followers_Resign_Button_Label>
+	<FCP_Followers_Resign_Button_Desc>Leave this faction.</FCP_Followers_Resign_Button_Desc>
+	<FCP_Followers_Enlisted_To_Hostile_Faction>cannot join because you are enlisted with their enemy, {HOSTILEFACTION_name}</FCP_Followers_Enlisted_To_Hostile_Faction>
+
+	<!-- Kicked Out Options -->
+
+	<FCP_Followers_Kick_Out_Letter_Title>Kicked out</FCP_Followers_Kick_Out_Letter_Title>
+	<FCP_Followers_Kick_Out_Label_Title>The chapter has let you go. You have been released from the {FACTION_name}.</FCP_Followers_Kick_Out_Label_Title>
+
+</LanguageData>

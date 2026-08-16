@@ -17,6 +17,10 @@
             </playerFaction>
             <parts>
 
+                <li Class="FCP.Core.GOAT.ScenPart_GOATExam">
+                    <def>FCP_GOATExam</def>
+                </li>
+
                 <!-- Config pages -->
                 <li Class="ScenPart_ConfigPage_ConfigureStartingPawns_KindDefs">
                     <def>ConfigurePawnsKindDefs</def>
@@ -47,6 +51,12 @@
                     <method>Standing</method>
                 </li>
 
+                <li Class="FCP.Enlist.ScenPart_StartEnlisted">
+                    <def>FCP_StartEnlisted</def>
+                    <factionDef>FCP_Faction_Followers</factionDef>
+                    <enlistOptionsDef>FCP_Enlistment_Followers</enlistOptionsDef>
+                </li>
+
                 <!-- Player starting things -->
                 <li Class="ScenPart_StartingThing_Defined">
                     <def>StartingThing_Defined</def>
@@ -65,9 +75,10 @@
                 </li>
 
                 <!-- Game start dialog -->
-                <li Class="ScenPart_GameStartDialog">
+                <li Class="FCP.Core.ScenPart_TerminalStartDialog">
                     <def>GameStartDialog</def>
-                    <text>The old chapter couldn't take everyone in when it closed its doors. Rather than scatter, a few of you decided to start over somewhere the wasteland hadn't already given up on.\n\nYou don't have much. A little medicine, fewer weapons than you'd like, and the same charter that's kept the Followers alive since the bombs fell: help whoever asks, teach whoever will listen, and never turn away the desperate.\n\nSomewhere out there is a spot worth calling home.</text>
+                    <title>New Chapter</title>
+                    <text>It is the year [FCP_Year]. The old chapter couldn't take everyone in when it closed its doors. Rather than scatter, a few of you decided to start over somewhere the wasteland hadn't already given up on.\n\nYou don't have much. A little medicine, fewer weapons than you'd like, and the same charter that's kept the Followers alive since the bombs fell: help whoever asks, teach whoever will listen, and never turn away the desperate.\n\nSomewhere out there is a spot worth calling home.</text>
                 </li>
 
             </parts>

@@ -33,6 +33,18 @@
             <li>FCP_Culture_Followers</li>
         </allowedCultures>
 
+        <!--__________ Royalty __________-->
+
+        <royalTitleTags>
+            <li>FCP_Title_Followers</li>
+        </royalTitleTags>
+        <royalFavorLabel>trust</royalFavorLabel>
+        <royalTitleInheritanceWorkerClass>RoyalTitleInheritanceWorker</royalTitleInheritanceWorkerClass>
+        <royalTitleInheritanceRelations>
+            <li>Child</li>
+            <li>Spouse</li>
+        </royalTitleInheritanceRelations>
+
         <!--__________ Ideology __________-->
 
         <fixedIdeo>true</fixedIdeo>
@@ -199,7 +211,28 @@
                         <newName>Administrator</newName>
                         <disableApparelRequirements>true</disableApparelRequirements>
                     </li>
+                    <li>
+                        <preceptDef>FCP_IdeoRole_Followers_Administrator</preceptDef>
+                        <disableApparelRequirements>true</disableApparelRequirements>
+                    </li>
+                    <li>
+                        <preceptDef>FCP_IdeoRole_Followers_Physician</preceptDef>
+                        <disableApparelRequirements>true</disableApparelRequirements>
+                    </li>
                 </roleOverrides>
+            </li>
+            <!-- Rank track -->
+            <li Class="FCP.Ranks.FactionExtension_RankTracks">
+                <rankTracks>
+                    <li>FCP_RankTrack_Followers</li>
+                </rankTracks>
+            </li>
+            <!-- Enlistment stuff -->
+            <li Class="FCP.Enlist.FactionEnlistOptions">
+                <enlistOptionsDefs>
+                    <li>FCP_Enlistment_Followers</li>
+                </enlistOptionsDefs>
+                <ignoreAutoAssignedDefs>true</ignoreAutoAssignedDefs>
             </li>
             <!-- Named settlements -->
             <li Class="FCP.Factions.FactionExtension_SettlementControl">

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <!--__________ Followers of the Apocalypse Rank Perks __________-->
+
+    <HediffDef Name="FCP_Hediff_Followers_RankBase" Abstract="True">
+        <hediffClass>HediffWithComps</hediffClass>
+        <isBad>false</isBad>
+        <tendable>false</tendable>
+        <scenarioCanAdd>false</scenarioCanAdd>
+        <maxSeverity>1</maxSeverity>
+        <initialSeverity>1</initialSeverity>
+    </HediffDef>
+
+    <!--_____ Path of Medicine _____-->
+
+    <HediffDef ParentName="FCP_Hediff_Followers_RankBase">
+        <defName>FCP_Hediff_Followers_Rank_FieldMedic</defName>
+        <label>field medic's training</label>
+        <description>Trusted to treat the wounded wherever they're found.</description>
+        <stages>
+            <li>
+                <statOffsets>
+                    <MedicalTendQualityOffset>0.04</MedicalTendQualityOffset>
+                </statOffsets>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <HediffDef ParentName="FCP_Hediff_Followers_RankBase">
+        <defName>FCP_Hediff_Followers_Rank_Physician</defName>
+        <label>physician's expertise</label>
+        <description>A full doctor of the chapter, trusted with the hardest cases.</description>
+        <stages>
+            <li>
+                <statOffsets>
+                    <MedicalTendQualityOffset>0.07</MedicalTendQualityOffset>
+                    <SocialImpact>0.08</SocialImpact>
+                </statOffsets>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <HediffDef ParentName="FCP_Hediff_Followers_RankBase">
+        <defName>FCP_Hediff_Followers_Rank_ChiefPhysician</defName>
+        <label>chief physician's authority</label>
+        <description>Runs every ward and archive shelf the chapter has.</description>
+        <stages>
+            <li>
+                <statOffsets>
+                    <MedicalTendQualityOffset>0.1</MedicalTendQualityOffset>
+                    <SocialImpact>0.14</SocialImpact>
+                </statOffsets>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <!--_____ Path of the Guard _____-->
+
+    <HediffDef ParentName="FCP_Hediff_Followers_RankBase">
+        <defName>FCP_Hediff_Followers_Rank_Guard</defName>
+        <label>guard's watch</label>
+        <description>Standing watch so the wards don't have to.</description>
+        <stages>
+            <li>
+                <statOffsets>
+                    <ShootingAccuracyPawn>3</ShootingAccuracyPawn>
+                </statOffsets>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <HediffDef ParentName="FCP_Hediff_Followers_RankBase">
+        <defName>FCP_Hediff_Followers_Rank_SeniorGuard</defName>
+        <label>senior guard's watch</label>
+        <description>Trusted to run the chapter's whole watch, small as it is.</description>
+        <stages>
+            <li>
+                <statOffsets>
+                    <ShootingAccuracyPawn>5</ShootingAccuracyPawn>
+                    <SocialImpact>0.05</SocialImpact>
+                </statOffsets>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <!--_____ Summit _____-->
+
+    <HediffDef ParentName="FCP_Hediff_Followers_RankBase">
+        <defName>FCP_Hediff_Followers_Rank_Administrator</defName>
+        <label>the administrator's charter</label>
+        <description>Runs the chapter, answering to no one but their own conscience.</description>
+        <stages>
+            <li>
+                <statOffsets>
+                    <MedicalTendQualityOffset>0.06</MedicalTendQualityOffset>
+                    <SocialImpact>0.16</SocialImpact>
+                </statOffsets>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <!-- Administrator Presence -->
+
+    <HediffDef>
+        <defName>FCP_Hediff_Followers_Administrator_Presence</defName>
+        <hediffClass>HediffWithComps</hediffClass>
+        <label>the administrator's presence</label>
+        <description>The administrator is nearby. Whoever's standing watch feels steadier for it.</description>
+        <isBad>false</isBad>
+        <tendable>false</tendable>
+        <scenarioCanAdd>false</scenarioCanAdd>
+        <maxSeverity>1</maxSeverity>
+        <initialSeverity>1</initialSeverity>
+        <comps>
+            <li Class="HediffCompProperties_Disappears">
+                <disappearsAfterTicks>310</disappearsAfterTicks>
+                <showRemainingTime>false</showRemainingTime>
+            </li>
+        </comps>
+        <stages>
+            <li>
+                <statOffsets>
+                    <MoveSpeed>0.2</MoveSpeed>
+                    <ShootingAccuracyPawn>3</ShootingAccuracyPawn>
+                    <MeleeDodgeChance>0.05</MeleeDodgeChance>
+                </statOffsets>
+            </li>
+        </stages>
+    </HediffDef>
+
+    <!-- Administrator Rally -->
+
+    <HediffDef>
+        <defName>FCP_Hediff_Followers_Administrator_Rally</defName>
+        <hediffClass>HediffWithComps</hediffClass>
+        <label>on alert</label>
+        <description>The administrator has called the watch to defend the wards. Steady hands, quick feet.</description>
+        <isBad>false</isBad>
+        <tendable>false</tendable>
+        <scenarioCanAdd>false</scenarioCanAdd>
+        <maxSeverity>1</maxSeverity>
+        <initialSeverity>1</initialSeverity>
+        <comps>
+            <li Class="HediffCompProperties_Disappears">
+                <disappearsAfterTicks>2500</disappearsAfterTicks>
+                <showRemainingTime>true</showRemainingTime>
+            </li>
+        </comps>
+        <stages>
+            <li>
+                <statOffsets>
+                    <MoveSpeed>1</MoveSpeed>
+                    <ShootingAccuracyPawn>5</ShootingAccuracyPawn>
+                    <MeleeDodgeChance>0.1</MeleeDodgeChance>
+                </statOffsets>
+            </li>
+        </stages>
+    </HediffDef>
+
+</Defs>
