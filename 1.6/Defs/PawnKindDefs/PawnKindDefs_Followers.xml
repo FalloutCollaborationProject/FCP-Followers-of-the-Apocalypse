@@ -39,7 +39,7 @@
             <li MayRequire="Rick.FCP.Wastelanders">FCP_Wastelander_Apparel</li>
         </apparelTags>
         <apparelAllowHeadgearChance>0.3</apparelAllowHeadgearChance>
-        <weaponMoney>0~120</weaponMoney>
+        <weaponMoney>140~250</weaponMoney>
         <weaponTags>
             <li>Gun</li>
             <li MayRequire="Rick.FCP.BallisticWeapons">FCP_Pistol</li>
@@ -63,7 +63,7 @@
             <li MayRequire="Rick.FCP.Wastelanders">FCP_Wastelander_Apparel</li>
         </apparelTags>
         <apparelAllowHeadgearChance>0.2</apparelAllowHeadgearChance>
-        <weaponMoney>0~150</weaponMoney>
+        <weaponMoney>140~200</weaponMoney>
         <weaponTags>
             <li>Gun</li>
             <li MayRequire="Rick.FCP.BallisticWeapons">FCP_Pistol</li>
@@ -127,7 +127,7 @@
             <li MayRequire="Rick.FCP.Wastelanders">FCP_Wastelander_Apparel</li>
         </apparelTags>
         <apparelAllowHeadgearChance>0.25</apparelAllowHeadgearChance>
-        <weaponMoney>0~120</weaponMoney>
+        <weaponMoney>140~250</weaponMoney>
         <weaponTags>
             <li>Gun</li>
             <li MayRequire="Rick.FCP.BallisticWeapons">FCP_Pistol</li>
@@ -152,7 +152,7 @@
             <li MayRequire="Rick.FCP.Wastelanders">FCP_Wastelander_Apparel</li>
         </apparelTags>
         <apparelAllowHeadgearChance>0.4</apparelAllowHeadgearChance>
-        <weaponMoney>100~250</weaponMoney>
+        <weaponMoney>140~250</weaponMoney>
         <weaponTags>
             <li>Gun</li>
             <li MayRequire="Rick.FCP.BallisticWeapons">FCP_Pistol</li>

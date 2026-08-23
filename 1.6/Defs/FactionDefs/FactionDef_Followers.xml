@@ -169,8 +169,7 @@
                     <FCP_Pawnkind_Followers_Aid_Caravaner>1</FCP_Pawnkind_Followers_Aid_Caravaner>
                 </traders>
                 <carriers>
-                    <Muffalo>4</Muffalo>
-                    <Dromedary>3</Dromedary>
+                    <FCP_Animal_Brahmin>7</FCP_Animal_Brahmin>
                 </carriers>
                 <guards>
                     <FCP_Pawnkind_Followers_Guard>3</FCP_Pawnkind_Followers_Guard>

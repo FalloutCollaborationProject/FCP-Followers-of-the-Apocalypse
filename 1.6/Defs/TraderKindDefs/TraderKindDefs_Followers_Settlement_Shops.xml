@@ -175,7 +175,7 @@
                     <li>FCP_Chem_Stimpak</li>
                     <li>FCP_Chem_MedX</li>
                     <li>FCP_Chem_Hydra</li>
-                    <li>FCP_Chem_Healing_Powder</li>
+                    <li MayRequire="Rick.FCP.Plants">FCP_Chem_Healing_Powder</li>
                 </thingDefs>
                 <countRange>15~35</countRange>
             </li>
@@ -297,7 +297,7 @@
                 <thingDefs>
                     <li>FCP_Chem_Stimpak</li>
                     <li>FCP_Chem_Radaway</li>
-                    <li>FCP_Chem_Healing_Powder</li>
+                    <li MayRequire="Rick.FCP.Plants">FCP_Chem_Healing_Powder</li>
                 </thingDefs>
                 <countRange>15~35</countRange>
             </li>

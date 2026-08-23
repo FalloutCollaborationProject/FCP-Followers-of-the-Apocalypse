@@ -9,6 +9,9 @@
         <gearHealthRange>10</gearHealthRange>
         <apparelAllowHeadgearChance>1</apparelAllowHeadgearChance>
         <apparelIgnoreSeasons>true</apparelIgnoreSeasons>
+        <apparelTags>
+            <li MayRequire="Rick.FCP.Wastelanders">FCP_Wastelander_Apparel</li>
+        </apparelTags>
         <weaponMoney>9999</weaponMoney>
         <initialWillRange>4~8</initialWillRange>
         <initialResistanceRange>12~20</initialResistanceRange>
