@@ -29,7 +29,7 @@
 			<EquipDelay>3</EquipDelay>
 		</statBases>
 		<equippedStatOffsets>
-			<HackingSpeed MayRequire="ludeon.rimworld.ideology">0.20</HackingSpeed>
+			<HackingSpeed>0.20</HackingSpeed>
 			<!-- Science +10 -->
 			<MedicalQualityMax>0.20</MedicalQualityMax>
 			<!-- Medicine +10 -->
