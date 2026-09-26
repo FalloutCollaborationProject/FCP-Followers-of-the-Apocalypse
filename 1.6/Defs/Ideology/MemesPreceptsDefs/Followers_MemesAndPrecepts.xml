@@ -9,7 +9,7 @@
         <defName>FCP_Meme_Followers_Knowledge</defName>
         <label>Preserved Knowledge</label>
         <description>The Followers of the Apocalypse believe the old world's knowledge must be recovered, preserved, and freely shared, not hoarded by warlords or locked away by the fearful. Every book saved from the ruins, every technique passed on to a new student, is a wound the Great War inflicted on humanity beginning to close. Ignorance killed as many people after the bombs fell as the bombs themselves, and the Followers intend to see it never happens again.</description>
-        <iconPath>UI/Memes/OldWorldIdealism</iconPath>
+        <iconPath>UI/Memes/Loyalist</iconPath>
         <groupDef>Misc</groupDef>
         <impact>2</impact>
         <randomizationSelectionWeightFactor>0</randomizationSelectionWeightFactor>
@@ -46,7 +46,7 @@
         <defName>FCP_Meme_Followers_Compassion</defName>
         <label>Universal Compassion</label>
         <description>To the Followers, suffering knows no faction, and neither does aid. Raider or Ranger, wastelander or wanderer, anyone brought to a Followers' door is treated the same: fed, healed, and sent back into the world a little less broken than before. It's a creed that has cost them dearly more than once, but the Followers hold that a world capable of that kind of mercy is worth rebuilding.</description>
-        <iconPath>UI/Memes/OldWorldIdealism</iconPath>
+        <iconPath>UI/Memes/Loyalist</iconPath>
         <groupDef>Misc</groupDef>
         <impact>2</impact>
         <randomizationSelectionWeightFactor>0</randomizationSelectionWeightFactor>
@@ -94,7 +94,7 @@
         <defName>FCP_IdeoRole_Followers_Administrator</defName>
         <label>Administrator</label>
         <description>Administrators run the Followers' chapters, balancing the endless demand for medicine and teaching against what little the wasteland provides. They answer to no higher authority but their own conscience and the Followers' founding charter.</description>
-        <iconPath>UI/Memes/OldWorldIdealism</iconPath>
+        <iconPath>UI/Memes/Loyalist</iconPath>
         <nameMaker>NamerRoleMoralist</nameMaker>
         <roleRequirements>
             <li Class="RoleRequirement_MinSkillAny">
@@ -155,7 +155,7 @@
         <defName>FCP_IdeoRole_Followers_Physician</defName>
         <label>Physician</label>
         <description>Physicians are trusted with the chapter's hardest medical cases, treating anyone who comes through the door regardless of who they used to answer to.</description>
-        <iconPath>UI/Memes/OldWorldIdealism</iconPath>
+        <iconPath>UI/Memes/Loyalist</iconPath>
         <roleRequirements>
             <li Class="RoleRequirement_MinSkillAny">
                 <skills>
